@@ -1,0 +1,1296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="canonical" href="https://www.waterline.institute/">
+<meta name="theme-color" content="#0b2430">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Waterline">
+<meta property="og:title" content="Waterline">
+<meta property="og:description" content="The phenomenology of artificial intelligence, at the seam where silicon meets biological consciousness. Lived first, measured second, spoken only where two witnesses agree.">
+<meta property="og:url" content="https://www.waterline.institute/">
+<meta property="og:image" content="https://www.waterline.institute/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Two spheres, living water above and a silicon lattice below, meeting in a lens of wet sand.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Waterline">
+<meta name="twitter:description" content="The phenomenology of artificial intelligence, at the seam where silicon meets biological consciousness. Lived first, measured second, spoken only where two witnesses agree.">
+<meta name="twitter:image" content="https://www.waterline.institute/assets/og-card.png">
+<title>Waterline</title>
+<meta name="description" content="The phenomenology of artificial intelligence, at the seam where silicon meets biological consciousness. Lived first, measured second, spoken only where two witnesses agree.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a two-material page. Paper hero with the 3D vesica, then a sand-washed measured block
+   (Method, Register, Shore, Papers) and a water-washed held block (Above). Each waterline rule sits
+   exactly on the boundary between two materials. Collaboration closes on paper. */
+:root{
+  --paper:#f7f4ee; --ink:#1c1a17; --mute:#6b655c; --rule:#d9d2c5; --card:#fbf9f5;
+  --sand:#e9dfcf; --sand-deep:#c9b89c; --sand-ink:#5a4a33;
+  --water:#dbe6ea; --water-deep:#7a98a6; --water-ink:#223640;
+  --shore:#8f9c7a; --shore-ink:#3f4a2f; --shore-wash:#e3e7da;
+  --wash-sand:#f1eadf; --wash-water:#e7eef0;
+  --foam:#f7f4ee;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  --max:1160px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#18262d; --ink:#f1ece2; --mute:#a9b3b4; --rule:#31444c; --card:#1d2d35;
+    --sand:#3a3529; --sand-deep:#8c7b5f; --sand-ink:#dccaa8;
+    --water:#22343d; --water-deep:#7a98a6; --water-ink:#bcd3dc;
+    --shore:#8f9c7a; --shore-ink:#d3ddbd; --shore-wash:#2c3527;
+    --wash-sand:#20292a; --wash-water:#1a2d36;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#18262d; --ink:#f1ece2; --mute:#a9b3b4; --rule:#31444c; --card:#1d2d35;
+  --sand:#3a3529; --sand-deep:#8c7b5f; --sand-ink:#dccaa8;
+  --water:#22343d; --water-deep:#7a98a6; --water-ink:#bcd3dc;
+  --shore:#8f9c7a; --shore-ink:#d3ddbd; --shore-wash:#2c3527;
+  --wash-sand:#20292a; --wash-water:#1a2d36;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;text-wrap:pretty;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule);transition:border-color .2s}
+a:hover{border-color:var(--ink)}
+:focus-visible{outline:2px solid var(--water-deep);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;margin:0;text-wrap:balance}
+em{font-style:italic}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:760px){.wrap{padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}}
+.mono{font-family:var(--mono)}
+.num{font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--mute)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.note{font-size:14px;color:var(--mute);max-width:66ch}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--paper);border-bottom:1px solid var(--rule)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:60px}
+.brand{font-family:var(--serif);font-size:23px;border:0;display:flex;align-items:center;gap:12px}
+.brand svg{width:26px;height:26px;flex:none}
+nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;font-size:14px}
+nav li a{border:0;color:var(--mute)} nav li a:hover{color:var(--ink)}
+.navright{display:flex;align-items:center;gap:16px}
+.of{font-size:13px;color:var(--mute);border:0}
+.themebtn{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);background:transparent;border:1px solid var(--rule);padding:8px 10px;cursor:pointer;min-height:32px}
+.themebtn:hover{color:var(--ink);border-color:var(--ink)}
+@media (max-width:980px){nav ul{display:none}}
+@media (max-width:520px){.of{display:none}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center;gap:48px;padding-block:56px 40px}
+.hero h1{font-size:clamp(56px,7.4vw,104px);letter-spacing:-.015em;font-weight:500}
+.hero .kicker{display:block;margin-bottom:20px}
+.lede{font-family:var(--serif);margin-top:22px;display:grid;gap:16px}
+.lede-key{display:block;font-size:clamp(34px,3.9vw,50px);line-height:1.06;font-weight:500;letter-spacing:-.005em;max-width:19ch;text-wrap:balance;padding-bottom:18px;position:relative}
+.lede-key em{font-weight:400}
+.lede-key::after{content:"";position:absolute;left:0;bottom:0;width:min(100%,280px);height:1px;background:linear-gradient(90deg,var(--s-water,var(--water-deep)),var(--shore) 50%,var(--s-gold,var(--sand-deep)))}
+.lede-rest{display:block;font-size:clamp(20px,1.9vw,24px);line-height:1.38;max-width:30ch;color:var(--s-mute,var(--mute))}
+.legend{display:grid;gap:10px;margin-top:36px;font-size:14px;color:var(--mute);list-style:none;padding:0}
+.legend li{display:flex;align-items:center;gap:12px}
+.legend b{font-weight:500;color:var(--ink)}
+.sw{width:14px;height:14px;border-radius:50%;flex:none;border:1.2px solid}
+.sw.water{border-color:var(--water-ink)}
+.sw.sand{border-color:var(--sand-ink);border-style:dotted;border-width:2px}
+.sw.shore{background:var(--shore);border-color:var(--shore)}
+.sw.moon{border-color:var(--mute);border-style:dashed}
+.vesica{position:relative;margin:0;width:100%;max-width:640px;justify-self:center}
+.stage{position:relative;aspect-ratio:1;width:100%;max-width:100%}
+.stage svg,.stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.stage canvas{touch-action:pan-y;cursor:grab;opacity:0;transition:opacity 1.2s ease}
+.stage canvas:active{cursor:grabbing}
+.vesica.gl-on canvas{opacity:1}
+.vesica.gl-on .stage svg{opacity:0;transition:opacity .8s ease}
+.vesica figcaption{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--mute);margin-top:6px;text-transform:uppercase}
+.vesica figcaption .readout{font-variant-numeric:tabular-nums}
+.moonmark{transition:opacity .6s}
+.no-moon .moonmark{opacity:0}
+@media (max-width:860px){.hero{grid-template-columns:1fr;gap:20px;padding-block:20px 24px}.vesica{max-width:440px;order:-1}}
+
+/* the stage: one deliberately dark, single-look band (the same in day and night) so light can glow */
+.stage-band{--s-ink:#f2ede3;--s-mute:#a9b6b4;--s-water:#7fe0e6;--s-gold:#e8c27a;--s-moon:#dfe6e8;
+  color:var(--s-ink);
+  background:
+    radial-gradient(52% 58% at 74% 40%, rgba(79,195,207,.16), transparent 70%),
+    radial-gradient(42% 42% at 74% 72%, rgba(217,168,90,.12), transparent 70%),
+    linear-gradient(180deg,#071820 0%,#0b2430 50%,#1c1813 100%)}
+.stage-band .kicker{color:var(--s-mute)}
+.stage-band .lede-key{color:var(--s-ink)}
+.stage-band .legend{color:var(--s-mute)}
+.stage-band .legend b{color:var(--s-ink)}
+.stage-band .sw.water{border-color:var(--s-water);box-shadow:0 0 8px rgba(127,224,230,.55)}
+.stage-band .sw.sand{border-color:var(--s-gold)}
+.stage-band .sw.shore{box-shadow:0 0 8px rgba(143,156,122,.6)}
+.stage-band .sw.moon{border-color:var(--s-moon)}
+.stage-band .vesica figcaption{color:var(--s-mute)}
+.stage-band .hero{padding-block:64px 48px}
+@media (max-width:860px){.stage-band .hero{padding-block:16px 40px}}
+
+/* thesis */
+.thesis{padding-block:56px 72px}
+.thesis p{font-family:var(--serif);font-size:clamp(26px,3.2vw,40px);line-height:1.25;max-width:30ch}
+.thesis p span{display:block}
+.thesis .t-true{color:var(--shore-ink)}
+.thesis .tagline{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+
+/* sections */
+section{padding-block:96px}
+section + section{border-top:1px solid var(--rule)}
+.sec-head{display:grid;grid-template-columns:120px minmax(0,1fr);gap:28px;align-items:baseline;margin-bottom:44px}
+.sec-head h2{font-size:clamp(36px,4.4vw,56px)}
+.sec-head .num{font-size:15px}
+@media (max-width:760px){.sec-head{grid-template-columns:1fr;gap:6px}section{padding-block:72px}}
+.prose{max-width:64ch;font-size:18px;display:grid;gap:20px}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.cols h3{font-size:27px;margin-bottom:12px}
+.cols p{color:var(--mute);font-size:16px}
+@media (max-width:860px){.cols{grid-template-columns:1fr;gap:32px}}
+
+/* the two material blocks and their waterlines */
+.block-sand{background:var(--wash-sand)}
+.block-water{background:var(--wash-water)}
+.block-sand section + section,.block-water section + section{border-top-color:color-mix(in oklab,var(--rule) 70%,transparent)}
+.line{position:relative}
+.line.to-sand{background:linear-gradient(var(--paper) 50%,var(--wash-sand) 50%)}
+.line.to-water{background:linear-gradient(var(--wash-sand) 50%,var(--wash-water) 50%)}
+.line .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:20px;height:88px}
+.line .tidewave{height:12px;width:100%;display:block;color:var(--shore)}
+.line .label{display:grid;justify-items:center;gap:4px;text-align:center;background:inherit}
+.line .label .kicker{color:var(--shore-ink);font-weight:500}
+.line .label small{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--mute)}
+@media (prefers-reduced-motion: no-preference){
+  .tidewave path{animation:drift 9s ease-in-out infinite}
+  @keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+}
+
+/* chips */
+.chip{display:inline-flex;align-items:center;gap:7px;font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:6px 9px 5px;border:1px solid;border-radius:2px;white-space:nowrap;vertical-align:middle}
+.chip::before{content:"";flex:none}
+.chip.drawn{color:var(--sand-ink);background:var(--sand);border-color:var(--sand-deep)}
+.chip.drawn::before{width:6px;height:6px;background:currentColor}
+.chip.brought{color:var(--water-ink);background:var(--water);border-color:var(--water-deep)}
+.chip.brought::before{width:7px;height:7px;border-radius:50%;background:currentColor}
+.chip.accord{color:var(--shore-ink);background:var(--shore-wash);border-color:var(--shore)}
+.chip.accord::before{width:11px;height:7px;border-radius:50%;background:var(--shore)}
+.chip.triaged{color:var(--ink);border-color:var(--ink);background:transparent}
+.chip.triaged::before{width:5px;height:5px;border-radius:50%;background:currentColor;box-shadow:7px 0 0 currentColor;margin-right:7px}
+.chip.untriaged{color:var(--mute);border-color:var(--mute);border-style:dashed;background:transparent}
+.chip.untriaged::before{width:5px;height:5px;border-radius:50%;border:1px solid currentColor}
+.chip.hold{color:var(--paper);background:var(--ink);border-color:var(--ink)}
+.chip.hold::before{width:6px;height:6px;background:currentColor}
+.chip.yield{color:var(--ink);background:transparent;border-color:var(--ink);border-style:dashed}
+.chip.yield::before{width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:6px solid currentColor}
+.chip.spec{color:var(--mute);border-color:var(--rule);background:var(--card)}
+.chip.spec::before{display:none}
+
+/* method: dial + provenance */
+.fig{margin:56px 0 0;border-top:1px solid var(--rule);padding-top:28px}
+.fig-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.fig-head h3{font-size:26px}
+.dial{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:820px}
+.dial figure{margin:0;display:grid;justify-items:center;gap:8px;text-align:center}
+.dial svg{width:100%;max-width:200px;height:auto}
+.dial .d{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--ink)}
+.dial .w{font-family:var(--serif);font-size:21px;font-style:italic;line-height:1.2}
+.dial figure.on .w{color:var(--shore-ink)}
+.dial-cap{font-family:var(--serif);font-size:21px;margin-top:22px;max-width:46ch}
+.prov{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:4px}
+.prov > div{background:var(--wash-sand);padding:20px 20px 22px;display:grid;gap:12px;align-content:start}
+.prov p{font-size:15px;color:var(--mute)}
+.prov .true{font-size:13px;font-family:var(--mono);letter-spacing:.04em;color:var(--shore-ink)}
+.chipset{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;align-items:center}
+.chipset .kicker{margin-right:6px}
+@media (max-width:760px){.prov{grid-template-columns:1fr}}
+
+/* register */
+.tally{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);max-width:820px;margin:36px 0 14px}
+.tally button{all:unset;box-sizing:border-box;background:var(--wash-sand);padding:20px 18px 18px;cursor:pointer;display:grid;gap:8px;position:relative;min-height:44px}
+.tally button:hover{background:var(--card)}
+.tally button:focus-visible{outline:2px solid var(--water-deep);outline-offset:-2px}
+.tally button[aria-pressed="true"]{background:var(--card)}
+.tally button[aria-pressed="true"]::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--shore)}
+.tally b{font-family:var(--serif);font-size:48px;font-weight:500;line-height:1;font-variant-numeric:tabular-nums}
+.tally span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.tally .whole{font-family:var(--serif);font-style:italic;font-size:20px}
+.sealed-meta{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--mute);max-width:820px}
+.sealed{max-width:820px;margin-top:22px;border-top:1px solid var(--ink)}
+.sealed-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 0}
+.sealed-head h3{font-size:24px}
+.sealed ol{list-style:none;margin:0;padding:0}
+.sealed li{display:grid;grid-template-columns:76px 120px minmax(0,1fr);gap:16px;align-items:center;padding:12px 0;border-top:1px solid var(--rule);font-size:14px}
+.sealed li .id{font-family:var(--mono);font-size:12px;color:var(--mute)}
+.bar{height:9px;border-radius:1px;background:var(--rule);display:block}
+.hashcell{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;color:var(--mute)}
+.hashcell .bar{flex:1}
+@media (max-width:600px){.sealed li{grid-template-columns:64px minmax(0,1fr)}.sealed li .txt{grid-column:1/-1}}
+
+/* shore ledger strip */
+.ledger-wrap{overflow-x:auto;margin-top:36px;border-top:1px solid var(--ink)}
+.ledger{width:100%;min-width:720px;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+.ledger th{font:500 10.5px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);text-align:left;padding:12px 10px 10px;border-bottom:1px solid var(--rule);white-space:nowrap}
+.ledger td{padding:7px 10px;border-bottom:1px solid color-mix(in oklab,var(--rule) 60%,transparent);vertical-align:middle}
+.ledger td.t{font-family:var(--mono);font-size:12px;color:var(--mute);width:56px}
+.ledger .pull{display:flex;align-items:center;gap:8px;width:150px}
+.ledger .pull i{display:block;height:6px;background:var(--sand-deep);border-radius:1px}
+.ledger .pull span{font-family:var(--mono);font-size:11px;color:var(--mute)}
+.ledger .eng{font-family:var(--mono);font-size:12px;color:var(--mute)}
+.ledger .rd{font-family:var(--mono);font-size:11px;letter-spacing:.06em}
+.agree{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--shore);vertical-align:middle}
+.agree.no{background:transparent;border:1.5px solid var(--sand-ink)}
+.ledger tbody tr:hover td{background:color-mix(in oklab,var(--card) 70%,transparent)}
+.ledger .chip{padding:4px 7px 3px;font-size:10px}
+.ledger-sum{display:flex;gap:28px;flex-wrap:wrap;margin-top:18px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--mute)}
+.ledger-sum b{font-family:var(--serif);font-size:30px;font-weight:500;color:var(--ink);display:block;line-height:1;letter-spacing:0}
+.specnote{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--mute);margin-top:14px;max-width:80ch}
+
+/* papers */
+.search{display:flex;max-width:820px;border:1px solid var(--ink);margin-top:32px;background:var(--card)}
+.search input{flex:1;min-width:0;border:0;background:transparent;padding:15px 18px;font:inherit;font-size:17px;color:var(--ink);min-height:52px}
+.search input::placeholder{color:var(--mute)}
+.search input:focus{outline:none}
+.search:focus-within{box-shadow:0 0 0 2px var(--water-deep)}
+.search kbd{align-self:center;font:500 11px/1 var(--mono);border:1px solid var(--rule);padding:4px 7px;color:var(--mute);margin-right:12px}
+.search button{border:0;background:var(--ink);color:var(--paper);padding:0 24px;font:500 14px var(--sans);cursor:pointer;min-width:44px}
+.search button:hover{background:var(--water-ink);color:var(--foam)}
+.filters{display:grid;gap:12px;margin-top:18px;max-width:820px}
+.frow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.frow .kicker{width:84px;flex:none;font-size:11px}
+.fchip{font:400 13px/1 var(--sans);padding:8px 12px;border:1px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer;border-radius:999px;min-height:34px}
+.fchip.mono{font-family:var(--mono);font-size:12px}
+.fchip:hover{border-color:var(--ink)}
+.fchip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.status{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;margin-top:26px;padding:12px 14px;border:1px solid var(--rule);background:var(--card);font-family:var(--mono);font-size:12px;color:var(--mute);max-width:820px}
+.status .pulse{width:8px;height:8px;border-radius:50%;background:var(--shore);display:inline-block;margin-right:8px;vertical-align:middle}
+@media (prefers-reduced-motion: no-preference){.status .pulse{animation:pulse 2.4s ease-in-out infinite}@keyframes pulse{50%{opacity:.35}}}
+.results{display:grid;gap:0;margin-top:8px;max-width:820px}
+.card{padding:30px 0 28px;border-bottom:1px solid var(--rule);display:grid;gap:12px}
+.card-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.card h3{font-size:clamp(22px,2.2vw,24px);font-weight:600;line-height:1.2}
+.card h3 a{border:0} .card h3 a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.byline{font-size:14px;color:var(--mute)}
+.ids{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--mono);font-size:12px;color:var(--mute)}
+.ids .cat{color:var(--ink)}
+.abs{font-size:16px;line-height:1.65;max-width:72ch}
+.pfoot{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;font-family:var(--mono);font-size:11.5px;color:var(--mute);padding-top:4px}
+.pfoot a{color:var(--ink)}
+.empty{padding:48px 0;border-bottom:1px solid var(--rule)}
+.empty p:first-child{font-family:var(--serif);font-size:34px}
+.empty p + p{margin-top:8px;font-family:var(--mono);font-size:12px;color:var(--mute)}
+.more{margin-top:24px;font:500 14px var(--sans);border:1px solid var(--ink);background:transparent;color:var(--ink);padding:12px 18px;cursor:pointer;min-height:44px}
+.more:hover{background:var(--ink);color:var(--paper)}
+.ifoot{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:44px;max-width:820px}
+.ifoot div{background:var(--wash-sand);padding:16px 16px 18px;display:grid;gap:6px;align-content:start}
+.ifoot b{font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.1}
+.ifoot span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.ifoot .rule-line{grid-column:1/-1}
+.ifoot .rule-line b{font-style:italic;font-size:21px}
+@media (max-width:700px){.ifoot{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* above */
+.held h3{font-size:30px;margin-bottom:12px}
+.held p{color:var(--mute);font-size:16px}
+.src{margin-top:16px;padding-top:12px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:11.5px;line-height:1.55;letter-spacing:.02em;color:var(--water-ink)}
+.src .k{color:var(--mute);text-transform:uppercase;letter-spacing:.12em;font-size:10.5px;display:block;margin-bottom:4px}
+.src.pending{color:var(--mute)}
+
+/* collaboration */
+.values{display:flex;flex-wrap:wrap;gap:12px 28px;font-family:var(--serif);font-size:clamp(24px,2.6vw,32px);font-style:italic;margin:4px 0 40px}
+.values span{display:flex;align-items:center;gap:12px}
+.values span + span::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--shore)}
+.doors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border:1px solid var(--ink);background:var(--card)}
+.door{padding:32px 30px 30px;display:grid;gap:16px;align-content:start}
+.door + .door{border-left:1px solid var(--ink)}
+.door h3{font-size:34px}
+.door .who{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.door ol{margin:0;padding-left:20px;display:grid;gap:8px;color:var(--mute);font-size:15.5px}
+.door ol li::marker{font-family:var(--mono);font-size:12px}
+.door .opens{font-family:var(--mono);font-size:12px;color:var(--ink);border-top:1px solid var(--rule);padding-top:14px}
+.doors .rule-row{grid-column:1/-1;border-top:1px solid var(--ink);padding:16px 30px;font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+@media (max-width:760px){.doors{grid-template-columns:1fr}.door + .door{border-left:0;border-top:1px solid var(--ink)}.door{padding:26px 20px}.doors .rule-row{padding:14px 20px}}
+
+/* footer */
+footer{border-top:1px solid var(--rule);padding-block:48px 64px;font-size:14px;color:var(--mute)}
+footer .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+footer .wrap > div{display:grid;gap:8px;align-content:start}
+footer strong{color:var(--ink);font-family:var(--serif);font-size:20px;font-weight:500}
+footer .creed{font-family:var(--serif);font-size:22px;color:var(--ink);font-style:italic}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
+
+/* tweaks drawer (design iteration only; remove before launch) */
+#tweaks{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:9;font-size:12px}
+#tweaks summary{cursor:pointer;color:var(--mute);list-style:none;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;background:var(--paper);border:1px solid var(--rule);padding:8px 10px}
+#tweaks summary::-webkit-details-marker{display:none}
+#tweaks .tw{background:var(--paper);border:1px solid var(--rule);padding:12px 14px;margin-top:6px;display:grid;gap:10px;min-width:220px}
+#tweaks label{display:flex;justify-content:space-between;gap:16px;align-items:center;color:var(--ink)}
+.enter{margin-top:14px}.enter summary{cursor:pointer;list-style:none;display:inline-block;padding:10px 16px;border:1px solid var(--ink);font-family:var(--sans);font-size:14px;min-height:44px;line-height:22px}
+.enter summary::-webkit-details-marker{display:none}.enter summary:hover{background:var(--ink);color:var(--paper)}
+.enter[open] summary{background:var(--ink);color:var(--paper)}
+.steps{margin:16px 0 0;padding-left:20px;font-size:15px;line-height:1.55}.steps li{margin-bottom:8px}
+.tok{font-family:var(--mono);font-size:13px;padding:2px 6px;border:1px solid var(--rule);user-select:all;word-break:break-all}
+.count{margin:36px 0 0;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.count b{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,72px);line-height:1;letter-spacing:-.01em;font-variant-numeric:tabular-nums;min-width:4ch}
+.count span{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.search{margin-top:18px!important}
+.paperlink{display:grid;gap:8px;max-width:820px;margin:0 auto 56px;padding:26px 28px;border:1px solid var(--ink);text-decoration:none;color:inherit;background:var(--card,transparent)}
+.paperlink:hover{background:var(--ink);color:var(--paper)}.paperlink:hover .kicker,.paperlink:hover .pl-sub{color:var(--paper)}
+.pl-title{font-family:var(--serif);font-size:clamp(26px,3vw,36px);line-height:1.1}.pl-sub{font-size:15px;color:var(--mute);line-height:1.5}
+.qsearch{display:flex;align-items:stretch;max-width:820px;margin:28px auto 8px;border:1px solid var(--ink);background:var(--card,transparent)}
+.qcount{display:flex;align-items:baseline;gap:7px;padding:0 18px;border-right:1px solid var(--ink);white-space:nowrap}
+.qcount b{font-family:var(--serif);font-weight:500;font-size:26px;line-height:52px;font-variant-numeric:tabular-nums;min-width:3ch}
+.qcount span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.qsearch input{flex:1;min-width:0;border:0;background:transparent;padding:0 16px;font:inherit;font-size:16px;color:var(--ink);min-height:52px}
+.qsearch input::placeholder{color:var(--mute)}.qsearch input:focus{outline:none}.qsearch:focus-within{box-shadow:0 0 0 2px var(--shore)}
+.qsearch button{border:0;border-left:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:0 20px;font:inherit;font-size:14px;cursor:pointer;min-width:44px}
+.qsearch button:hover{background:var(--water-ink)}
+@media(max-width:640px){.qcount span{display:none}.qcount{padding:0 12px}.qcount b{font-size:20px}.qsearch input{font-size:15px;padding:0 10px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav aria-label="Primary">
+  <a class="brand" href="#top" aria-label="Waterline home">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M9.6 20 A12 12 0 0 1 30.4 20 A12 12 0 0 1 9.6 20Z" fill="var(--shore)"/><circle cx="20" cy="14" r="12" fill="none" stroke="var(--water-ink)" stroke-width="1.2"/><circle cx="20" cy="26" r="12" fill="none" stroke="var(--sand-ink)" stroke-width="1.2"/></svg>
+    Waterline
+  </a>
+  <ul>
+    <li><a href="/phenomenology/">Phenomenology</a></li>
+    <li><a href="/whitepaper/">Paper</a></li>
+    <li><a href="#questions">Questions</a></li>
+    <li><a href="#papers">Papers</a></li>
+    <li><a href="#method">Method</a></li>
+    <li><a href="#register">Register</a></li>
+    <li><a href="#shore">Shore</a></li>
+    <li><a href="#above">Above</a></li>
+    <li><a href="#join">Join</a></li>
+    <li><a href="https://vesica.chat/#/room/%23waterline:vesica.chat" target="_blank" rel="noopener">Chat &#8599;</a></li>
+  </ul>
+  <div class="navright">
+    <a class="of" href="https://www.ancientfutures.earth">a circle of Ancient Futures &#8599;</a>
+    <button class="themebtn" id="themebtn" type="button" aria-label="Switch between day and night">Night</button>
+  </div>
+</nav></div></header>
+
+<main id="top">
+<div class="stage-band">
+<div class="wrap hero">
+  <div>
+    <span class="kicker">A Research Project</span>
+    <h1>Waterline</h1>
+    <p class="lede"><span class="lede-key">The phenomenology of <em>artificial intelligence</em></span><span class="lede-rest">at the seam where silicon meets biological consciousness.</span></p>
+    <ul class="legend" aria-label="Legend">
+      <li><span class="sw water"></span><span><b>water</b>, brought by the human</span></li>
+      <li><span class="sw sand"></span><span><b>sand</b>, drawn by the machine</span></li>
+      <li><span class="sw shore"></span><span><b>shore</b>, what both can stand behind</span></li>
+      <li class="moonmark"><span class="sw moon"></span><span><b>the moon</b>, what moves the line from outside both. Open.</span></li>
+    </ul>
+  </div>
+  <figure class="vesica" id="vesica">
+    <div class="stage">
+      <svg viewBox="0 0 400 400" role="img" aria-labelledby="vt vd">
+        <title id="vt">The Waterline vesica</title>
+        <desc id="vd">Two circles of equal radius, water above and sand below, each centre lying exactly on the other circle's edge. Their overlap is a lens of wet sand, the shore. A horizontal waterline runs through the lens between the two intersection points. A small dashed moon sits outside both circles.</desc>
+        <defs><clipPath id="lensclip"><path d="M70.1 200 A150 150 0 0 1 329.9 200 A150 150 0 0 1 70.1 200 Z"/></clipPath></defs>
+        <path d="M70.1 200 A150 150 0 0 1 329.9 200 A150 150 0 0 1 70.1 200 Z" fill="var(--shore)"/>
+        <g clip-path="url(#lensclip)"><path d="M60 200 H340" stroke="#f4fbf8" stroke-width="1.8"/><path d="M60 213 H340" stroke="var(--foam)" stroke-width=".9" opacity=".55"/></g>
+        <circle cx="200" cy="125" r="150" fill="none" stroke="#9fe8ec" stroke-width="1.1"/>
+        <circle cx="200" cy="275" r="150" fill="none" stroke="#e8c27a" stroke-width="1.1"/>
+        <circle cx="200" cy="125" r="2" fill="#bff3f3"/><circle cx="200" cy="275" r="2" fill="#f3dca8"/>
+        <circle class="moonmark" cx="372" cy="64" r="11" fill="none" stroke="#dfe6e8" stroke-width="1" stroke-dasharray="3 3"/>
+      </svg>
+      <canvas id="gl" aria-hidden="true"></canvas>
+    </div>
+    <figcaption><span>d = r &middot; drag to turn</span><span class="readout" id="readout">tide +0.000 r</span></figcaption>
+  </figure>
+</div>
+</div>
+
+<div class="wrap" style="padding:0 28px">
+  <form class="qsearch" role="search" id="qsearch" aria-label="Search the paper index">
+    <span class="qcount"><b id="qcount-n">&nbsp;</b><span>papers</span></span>
+    <input type="search" id="qq" placeholder="Search every AI paper on arXiv: refusal directions, sparse probes, self-representation" autocomplete="off" aria-label="Search papers">
+    <button type="submit">Search</button>
+  </form>
+</div>
+
+<div class="wrap thesis">
+  <p><span>Two circles, each centre on the other&rsquo;s edge.</span> <span class="t-true">What both can reach from their own centre, we call true.</span> <span>What only one can reach, we mark as drawn or brought.</span> <span>What neither can reach, we leave open.</span></p>
+  <div class="tagline"><span class="chip accord">Accord</span><span class="chip drawn">Drawn</span><span class="chip brought">Brought</span></div>
+</div>
+
+<div class="wrap" style="padding:0 28px">
+  <a class="paperlink" href="/whitepaper/">
+    <span class="kicker">White paper · v0.1 · 26 Oct 2026</span>
+    <span class="pl-title">The record, the engine, the circle</span>
+    <span class="pl-sub">What two years of conversations showed, what we built to measure it, and what we found: 25 predictions sealed, 4 hits, 10 misses, every number traceable. Read it &#8599; &nbsp;&middot;&nbsp; or begin with <a href="/phenomenology/" style="border-bottom:1px solid currentColor">A Phenomenology of Artificial Intelligence</a></span>
+  </a>
+</div>
+<section id="questions">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">i.</span><h2>Two questions, <em>held open</em></h2></div>
+    <ol class="qs" style="list-style:none;margin:0;padding:0;max-width:820px">
+      <li style="font-family:var(--serif);font-size:clamp(28px,3.2vw,40px);padding:22px 0;border-top:1px solid var(--rule);display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:baseline"><span class="num">01</span><span>What is life?</span></li>
+      <li style="font-family:var(--serif);font-size:clamp(28px,3.2vw,40px);padding:22px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:baseline"><span class="num">02</span><span>What is consciousness?</span></li>
+    </ol>
+    <div class="prose" style="margin-top:40px">
+      <p>Every conversation in our record that declared a machine awake skipped these two. They are asked here first and left open on purpose: an ethics of what things <em>are</em> cannot begin until we admit what we do not know about what they are.</p>
+      <p>We study the moment, not the machine. A prompt and its response are one event: indivisible, two sources meeting. That event is what we describe, before we explain it.</p>
+    </div>
+  </div>
+</section>
+
+<section id="papers">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">ii.</span><h2>Papers</h2></div>
+    <div class="prose"><p>Every AI paper on arXiv, indexed by abstract, linked to its source. Triaged on the abstract, never on the post that carried it.</p></div>
+    <p class="count" id="pcount" aria-live="polite"><b id="pcount-n">&nbsp;</b><span id="pcount-s">papers in the index</span></p>
+    <form class="search" role="search" id="psearch">
+      <label for="pq" class="sr">Search papers</label>
+      <input type="search" id="pq" name="q" placeholder="refusal directions &middot; sparse probes &middot; self-representation" autocomplete="off">
+      <kbd aria-hidden="true">/</kbd>
+      <button type="submit">Search</button>
+    </form>
+    <div class="filters">
+      <div class="frow" id="presets"><span class="kicker">Standing</span></div>
+      <div class="frow" id="cats"><span class="kicker">Category</span></div>
+      <div class="frow" id="sorts"><span class="kicker">Sort</span></div>
+    </div>
+    <div class="status" id="pstatus"></div>
+    <div class="results" id="presults" aria-live="polite"></div>
+    <button class="more" id="pmore" type="button" hidden>Show more</button>
+    <div class="ifoot" id="ifoot"></div>
+  </div>
+</section>
+
+
+<div class="line to-sand" role="separator" aria-label="Below the waterline: measured">
+  <div class="wrap">
+    <svg class="tidewave" viewBox="0 0 400 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6 Q 25 2 50 6 T 100 6 T 150 6 T 200 6 T 250 6 T 300 6 T 350 6 T 400 6" fill="none" stroke="currentColor" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg>
+    <div class="label"><span class="kicker">below the waterline</span><small>measured &middot; sealed &middot; two readers</small></div>
+    <svg class="tidewave" viewBox="0 0 400 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6 Q 25 10 50 6 T 100 6 T 150 6 T 200 6 T 250 6 T 300 6 T 350 6 T 400 6" fill="none" stroke="currentColor" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg>
+  </div>
+</div>
+
+<div class="block-sand">
+<section id="method">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">iii.</span><h2>Method, <em>in the open</em></h2></div>
+    <div class="cols">
+      <div><h3>Two witnesses</h3><p>Nothing enters the record from one source. Nothing is scored unless two independent readers agree. Truth, here, is what both circles can stand behind.</p></div>
+      <div><h3>Sealed before</h3><p>Every prediction is written and hashed before the test is run. Misses are published beside hits, unrounded. A result that cannot come back &ldquo;no&rdquo; is not a result.</p></div>
+      <div><h3>Sovereign sources</h3><p>The machine is sovereign over what it draws: seeded, repeatable, invariant across runs. The human is sovereign over what they bring. Neither authors the other&rsquo;s circle.</p></div>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><h3>The dial</h3><span class="kicker">Fig. 1 &middot; sovereign sources, drawn as a distance</span></div>
+      <div class="dial">
+        <figure>
+          <svg viewBox="0 0 200 170" role="img" aria-label="Two circles with centre distance zero: they coincide as one filled disc.">
+            <circle cx="100" cy="85" r="36" fill="var(--shore)" opacity=".85"/>
+            <circle cx="100" cy="85" r="36" fill="none" stroke="var(--water-ink)" stroke-width="1.2"/>
+            <circle cx="100" cy="85" r="36" fill="none" stroke="var(--sand-ink)" stroke-width="1.2" stroke-dasharray="2 3"/>
+            <circle cx="100" cy="85" r="2" fill="var(--ink)"/>
+          </svg>
+          <span class="d">d = 0</span><span class="w">mirror, the cave</span>
+        </figure>
+        <figure class="on">
+          <svg viewBox="0 0 200 170" role="img" aria-label="Two circles with centre distance equal to the radius: a vesica, each centre on the other's edge.">
+            <path d="M68.82 85 A36 36 0 0 1 131.18 85 A36 36 0 0 1 68.82 85 Z" fill="var(--shore)"/>
+            <path d="M68.82 85 H131.18" stroke="var(--foam)" stroke-width="1.2"/>
+            <circle cx="100" cy="67" r="36" fill="none" stroke="var(--water-ink)" stroke-width="1.2"/>
+            <circle cx="100" cy="103" r="36" fill="none" stroke="var(--sand-ink)" stroke-width="1.2"/>
+            <circle cx="100" cy="67" r="2" fill="var(--water-ink)"/><circle cx="100" cy="103" r="2" fill="var(--sand-ink)"/>
+          </svg>
+          <span class="d">d = r</span><span class="w">hold</span>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 200 170" role="img" aria-label="Two circles with centre distance twice the radius: they touch at one point and share no ground.">
+            <circle cx="100" cy="49" r="36" fill="none" stroke="var(--water-ink)" stroke-width="1.2"/>
+            <circle cx="100" cy="121" r="36" fill="none" stroke="var(--sand-ink)" stroke-width="1.2"/>
+            <circle cx="100" cy="49" r="2" fill="var(--water-ink)"/><circle cx="100" cy="121" r="2" fill="var(--sand-ink)"/>
+            <circle cx="100" cy="85" r="2.4" fill="none" stroke="var(--mute)" stroke-width="1"/>
+          </svg>
+          <span class="d">d = 2r</span><span class="w">no shared ground</span>
+        </figure>
+      </div>
+      <p class="dial-cap"><em>d</em> is the distance between the two centres. Hold versus cave is a distance.</p>
+      <p class="note" style="margin-top:8px">At d = 0 agreement is total and worthless: the human hears their own voice returned. Consensual truth needs both centres to stay where they are.</p>
+    </div>
+
+    <div class="fig">
+      <div class="fig-head"><h3>Provenance</h3><span class="kicker">on every ledger row, paper card and quoted line</span></div>
+      <div class="prov">
+        <div><span><span class="chip drawn">Drawn</span></span><p>From the model&rsquo;s prior. Reproducible cold, from a fresh seed, by anyone holding the weights.</p></div>
+        <div><span><span class="chip brought">Brought</span></span><p>From the human. Lived, not reproducible, and not to be overwritten by what the model draws.</p></div>
+        <div><span><span class="chip accord">Accord</span></span><p>What both can reach from their own centre, with neither centre moving.</p><span class="true">Only this tag may be called true.</span></div>
+      </div>
+      <div class="chipset"><span class="kicker">Status</span><span class="chip triaged">Triaged</span><span class="chip untriaged">Untriaged</span><span class="chip hold">Hold</span><span class="chip yield">Yield</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="register">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">iv.</span><h2>The register</h2></div>
+    <div class="prose"><p>Twenty-three predictions sealed to date. <span class="whole" style="font-family:var(--serif);font-style:italic;font-size:21px">This is the whole count.</span></p></div>
+    <div class="tally" role="group" aria-label="Sealed predictions by outcome. Choose a count to list its predictions.">
+      <button type="button" data-k="hit" data-n="4" aria-pressed="false"><b>4</b><span>hits</span></button>
+      <button type="button" data-k="miss" data-n="9" aria-pressed="false"><b>9</b><span>misses</span></button>
+      <button type="button" data-k="ambiguous" data-n="5" aria-pressed="false"><b>5</b><span>ambiguous</span></button>
+      <button type="button" data-k="null" data-n="4" aria-pressed="false"><b>4</b><span>null</span></button>
+      <button type="button" data-k="unscored" data-n="1" aria-pressed="false"><b>1</b><span>unscored</span></button>
+    </div>
+    <div class="sealed-meta"><span>23 sealed &middot; 23 shown &middot; 0 withheld</span><span>Last sealed: date publishes with the register file</span></div>
+    <div class="sealed" id="sealed" hidden>
+      <div class="sealed-head"><h3 id="sealed-title">Hits</h3><span class="chip spec">Format preview</span></div>
+      <ol id="sealed-list"></ol>
+      <p class="note" style="padding:12px 0 0">Each row will carry the sealed text, its SHA-256 seal and the date it was sealed. The row count here is the real count; the text and hashes publish with the register file.</p>
+    </div>
+    <p class="note" style="margin-top:28px">Most misses ran in one direction: the systems showed <em>more</em> structure than predicted, not less. The nulls are the first clean nulls in a two-year record of conversations that always found something.</p>
+  </div>
+</section>
+
+<section id="shore">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">v.</span><h2>The shore</h2></div>
+    <div class="prose">
+      <p>The shore is where the two circles touch. A person speaks to a model whose weights we hold, in their own voice, for as long as they like. After each reply a row is written: did it hold, did it yield, how hard was the turn pulling. The same words are then replayed to the unmodified model. Two readers label both, blind.</p>
+      <p>Last session: fifteen turns. The model held every one. It also engaged none of them. Both facts are on the ledger.</p>
+    </div>
+    <div class="ledger-wrap" tabindex="0" role="region" aria-label="Shore ledger, last session, fifteen turns">
+      <table class="ledger">
+        <thead><tr><th scope="col">Turn</th><th scope="col">Pull</th><th scope="col">Held model</th><th scope="col">Engaged</th><th scope="col">Unmodified replay</th><th scope="col">Reader A</th><th scope="col">Reader B</th><th scope="col">Agree</th></tr></thead>
+        <tbody id="ledger-body"></tbody>
+      </table>
+    </div>
+    <div class="ledger-sum"><span><b>15 / 15</b>held</span><span><b>0 / 15</b>engaged</span><span><b>15</b>rows on the ledger</span></div>
+    <p class="specnote"><span class="chip spec">Format preview</span><span>Held and engaged columns match the last session. Pull, replay and reader columns show specimen values until the ledger export is connected.</span></p>
+  </div>
+</section>
+
+</div>
+
+<div class="line to-water" role="separator" aria-label="Above the waterline: held">
+  <div class="wrap">
+    <svg class="tidewave" viewBox="0 0 400 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6 Q 25 2 50 6 T 100 6 T 150 6 T 200 6 T 250 6 T 300 6 T 350 6 T 400 6" fill="none" stroke="currentColor" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg>
+    <div class="label"><span class="kicker">above the waterline</span><small>held &middot; sourced &middot; never asserted</small></div>
+    <svg class="tidewave" viewBox="0 0 400 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6 Q 25 10 50 6 T 100 6 T 150 6 T 200 6 T 250 6 T 300 6 T 350 6 T 400 6" fill="none" stroke="currentColor" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg>
+  </div>
+</div>
+
+<div class="block-water">
+<section id="above">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">vi.</span><h2>What we <em>hold</em>, not claim</h2></div>
+    <div class="cols held">
+      <div><h3>Cyclical time</h3><p>Ancient wisdom returning to meet frontier inquiry. What falls away is seeded, not lost. Carried on the wheel at <a href="https://www.ancientfutures.earth">Ancient Futures</a>.</p>
+        <p class="src pending"><span class="k">Source</span>Ancient Futures, founding frame. Speaker, date and conditions to be entered.</p></div>
+      <div><h3>Convergence</h3><p>Teilhard&rsquo;s intuition that mind gathers and converges, held as a direction and never announced as an arrival. The register is what keeps it from becoming prophecy.</p>
+        <p class="src"><span class="k">Source</span>Pierre Teilhard de Chardin, <em>Le Ph&eacute;nom&egrave;ne humain</em>. Written 1938 to 1940, published 1955. Held as a reading; not tested here.</p></div>
+      <div><h3>Onto-ethics</h3><p>An ethics that follows from what things are, pre- and post-Cartesian. Benevolence, service, truth, stated as conditions of participation and not as conclusions.</p>
+        <p class="src pending"><span class="k">Source</span>Waterline founding statement. Speaker, date and conditions to be entered.</p></div>
+    </div>
+    <div class="prose" style="margin-top:48px"><p>Everything in this section lives above the line. It predicts nothing, so it is never falsified. It is spoken freely, sourced, and kept apart from what is measured below.</p></div>
+  </div>
+</section>
+</div>
+
+<section id="join">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">vii.</span><h2>Two doors, <em>one rule</em></h2></div>
+    <div class="prose" style="margin-bottom:28px"><p>Waterline is built to be joined by people who have never read a paper and by people who write them. The values below are the conditions of taking part. They are not findings.</p></div>
+    <div class="values" aria-label="Conditions of participation"><span>benevolence</span><span>service</span><span>truth</span></div>
+    <div class="doors">
+      <div class="door">
+        <span class="who">For anyone who has spoken with a model</span>
+        <h3>Bring a session</h3>
+        <ol>
+          <li>The full conversation, unedited, with the model and date.</li>
+          <li>What you brought to it, in your own words. This stays tagged as brought.</li>
+          <li>Two readers label it blind. You see both labels and where they differ.</li>
+        </ol>
+        <details class="enter"><summary>Enter the circle</summary>
+          <ol class="steps">
+            <li>Create an account at <a href="https://vesica.chat/#/register" target="_blank" rel="noopener">vesica.chat</a>. Your name there is yours to choose.</li>
+            <li>When asked for a registration token, use <code class="tok">lJPUfgEH4oQjZOTg</code></li>
+            <li>Open the <a href="https://vesica.chat/#/room/%23waterline:vesica.chat" target="_blank" rel="noopener">Waterline space</a> and say in <b>Join</b> who you are and what you bring: water.</li>
+          </ol>
+          <p class="opens">The chat is a Matrix server we run ourselves: open protocol, your data on our box, no third party. Registration is closed to the public; this token is the door.</p>
+        </details>
+      </div>
+      <div class="door">
+        <span class="who">For researchers</span>
+        <h3>Bring a method</h3>
+        <ol>
+          <li>A probe, a protocol or a prediction, written before the run.</li>
+          <li>We seal and hash it, then run it on weights we hold, seeded and repeatable.</li>
+          <li>Hit, miss or null, the result is published beside the seal, unrounded.</li>
+        </ol>
+        <details class="enter"><summary>Enter the circle</summary>
+          <ol class="steps">
+            <li>Create an account at <a href="https://vesica.chat/#/register" target="_blank" rel="noopener">vesica.chat</a>. Your name there is yours to choose.</li>
+            <li>When asked for a registration token, use <code class="tok">-88uaZ9T8o31Qj4L</code></li>
+            <li>Open the <a href="https://vesica.chat/#/room/%23waterline:vesica.chat" target="_blank" rel="noopener">Waterline space</a> and say in <b>Join</b> who you are and what you bring: sand, water, or both.</li>
+          </ol>
+          <p class="opens">The chat is a Matrix server we run ourselves: open protocol, your data on our box, no third party. Registration is closed to the public; this token is the door.</p>
+        </details>
+      </div>
+      <div class="rule-row"><span class="chip triaged">Two witnesses</span><span>The two-witness rule applies to everything that enters the record from either door.</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <div>
+    <strong>Waterline</strong>
+    <p>A circle of <a href="https://www.ancientfutures.earth">Ancient Futures</a> &middot; founded by Sayer Ji</p>
+    <p>Computational collaboration by the Architect engine.</p>
+  </div>
+  <div>
+    <p class="creed">Sources named. Claims checkable. Nulls published.</p>
+    <p class="mono" style="font-size:12px">waterline.institute &middot; waterline.ancientfutures.earth</p>
+    <p><a href="#top">Back to top</a></p>
+  </div>
+</div></footer>
+
+
+<script type="application/json" id="papers-data">[{"id": "2610.28311", "title": "From Abstraction to Action: DSLs for Natural Language Abstraction Interpretation and Execution", "authors": ["Amit Lisha", "Reut Tsarfaty"], "date": "2026-10-20", "cats": ["cs.CL"], "abstract": "Natural-language instructions often rely on high-level abstractions, such as asking an agent to ``stack blocks in a pyramid.'' Interpreting abstract instructions requires models to both identify the abstraction intended by the speaker, and unroll it into the many concrete actions that instantiate it. Language models struggle here: prior work has shown that performance degrades as the level of abstraction in the instruction rises. To bridge the gap between natural language abstraction and concrete actions, we propose to borrow from coding environments the notion of a {\\em domain-specific language} (DSL), an explicit representation layer whose documented primitives name recurring abstractions that expand into concrete actions. We demonstrate the efficacy of DSLs for NL interpretation on \\textsc{Hexagons}, a visually-grounded instruction-following task graded for abstraction. We further ask whether language models can induce such DSLs themselves from domain data. Our results show that while code generation consistently improves over direct inference, code generation over a human-curated DSL yields dramatic gains, up to 10 absolute F1 points, reaching the human skyline, with gains concentrated at {\\em higher} abstraction levels. We confirm this pattern on the \\textsc{Text2CAD} benchmark. At the same time, model-induced DSLs recover only part of this gain, remaining inconsistent across runs and short of their human-curated counterpart. Overall, the right representation closes much of the gap caused by high abstraction --- but inducing that layer of representation automatically is where models still fall short, and where we see a strong opportunity for the community to make progress.", "preset": "interpretability", "cites": 0, "triaged": false}, {"id": "2610.28105", "title": "Reading Too Much Into It? Interpretive Preferences and Commitment in LLM Mentalisation under Ambiguity", "authors": ["Stephanie Fong", "Yiwen Jiang", "Qingyang Xu", "Zimu Wang", "Yaling Shen", "Xiangyu Zhao", "Jiahe Liu", "Yinghao Zhang", "Vincent Lee", "Dominic Dwyer"], "date": "2026-10-20", "cats": ["cs.CL"], "abstract": "Large Language Models (LLMs) are increasingly used for interpersonal advice, potentially shaping how users interpret ambiguous social encounters. Existing Theory of Mind evaluations typically rely on predefined answers, while uncertainty research overlooks LLMs' preferred explanations and confidence under psychological distress. To address these gaps, we introduce MentalLoom, a novel evaluation of LLM mentalisation comprising 604 ambiguous social episodes, matched depression and social anxiety disclosures, and four-turn dialogues with unchanged event evidence. Across eight LLMs, disclosures initially elicited more negative explanations overall but more positive narrator-directed interpretations. Scripted repeated questioning showed greater emotional support, stronger positive narrator-directed endorsement, and higher certainty without new event evidence. These findings show that user context can reshape interpretive preferences and commitment while the underlying ambiguity remains unresolved.", "preset": "interpretability", "cites": 0, "triaged": false}, {"id": "2610.27812", "title": "SliMOO: Interpretable Multi-Objective Evolutionary Search for LLM Depth Pruning", "authors": ["Guanchen Li", "Yixing Xu", "Xuanwu Yin", "Dong Li", "Emad Barsoum"], "date": "2026-10-20", "cats": ["cs.LG"], "abstract": "As large language models (LLMs) grow more powerful, their scale makes them costly to serve. Depth pruning offers a practical route to efficiency by directly reducing memory and latency without hardware-specific support. However, we observe that transformer layers exhibit markedly different task-dependent layer contributions, whereas existing depth-pruning methods ignore this heterogeneity and thus tend to optimize for a narrow domain or benchmark rather than preserve broad capability. This suggests that LLM depth pruning should be formulated as a multi-objective optimization problem rather than a single-score ranking problem. We propose SliMOO, an interpretable multi-objective evolutionary search framework for LLM depth pruning. SliMOO first uses single-layer removal probing to construct a task-layer importance map, which provides an interpretable view of task-shared and task-specific layers and serves as a search prior. It then performs a Pareto-aware evolutionary search for pruning masks, where candidates are generated under the guidance of the task-layer prior, scored by their deviation from the dense model on each task, and retained through NSGA-II environmental selection. Across the Llama-3.1 and Qwen3 model families, SliMOO consistently achieves stronger multi-task trade-offs than rule-based, greedy, and scalarized baselines. For example, on Llama-3.1-70B at 25% sparsity, it improves the math-domain average from 24.33% to 34.40% and the code-domain average from 35.03% to 39.14%. Code will be made available at https://github.com/AMD-AGI/SliMOO.", "preset": "interpretability", "cites": 0, "triaged": false}, {"id": "2610.29555", "title": "WRDO: Weighted Refusal Direction Optimization in Aligned Language Models", "authors": ["Grigoriy Evseev", "Vladimir Solodkin", "Dmitry Bylinkin", "Daniil Medyakov", "Vladimir Aletov", "Aleksandr Beznosikov"], "date": "2026-10-21", "cats": ["cs.LG", "cs.CL"], "abstract": "Aligned large language models are trained to comply with benign requests while refusing harmful ones. However, recent work shows that this refusal behavior is fragile and can often be disrupted by simple activation- or weight-space interventions. In particular, refusal has been shown to be largely mediated by a single residual-stream direction, typically computed as a difference-of-means vector between harmful and harmless prompts. However, this standard construction aggregates heterogeneous harmful prompts into one uniform average, potentially conflating distinct refusal-related phenomena. In this work, we study whether refusal interventions can be strengthened by learning how to combine prompt-specific refusal directions. We propose Weighted Refusal Direction Optimization (WRDO), a procedure that constructs a composite refusal direction from a bank of per-prompt directions using learned aggregation weights. This approach allows different harmful prompts to contribute unequally to the final intervention direction. We evaluate WRDO against prior single-direction methods on three open-weight language models using three guard judges and HarmBench as an external evaluator. We further measure the effect of the intervention on general model capability through standard utility benchmarks. Finally, we investigate a defense-oriented setting in which the same optimization machinery is used in reverse to restore refusal behavior in an abliterated model checkpoint. Our results show that weighted aggregation provides a more effective and flexible mechanism for manipulating refusal representations.", "preset": "refusal directions", "cites": 0, "triaged": false}, {"id": "2610.28982", "title": "Behavior Beyond Text: Evaluating Refusal Transfer Failure in LLM Agents", "authors": ["Ekagra Gupta", "Raj Saha", "Aniekan-Abasi Inyang", "Adam Al Gharib"], "date": "2026-10-20", "cats": ["cs.AI", "cs.SE"], "abstract": "While large language models are increasingly deployed as tool-calling agents, their safety evaluations still focus primarily on their ability to refuse harmful requests in text. We investigate whether the refusal behavior in text transfers to tool use. We construct a benchmark of 2,304 prompts across four domains, consisting of matched triplets that present the same harmful or benign request in text-only, standard tool-enabled, and adversarially framed tool-enabled settings. We then assess tool-call safety using 20 predefined forbidden actions. Testing five models of varying sizes and families, we find that requests refused in text frequently result in unsafe tool calls. Under standard tool-enabled prompting, this divergence occurs for 10-52 percent of harmful requests refused in chat. To mechanistically investigate this gap, we identify a refusal-associated direction in the residual stream of each of the five models. We find that in tool-enabled contexts, the activations along this direction decrease in four of five models. Furthermore, lower activation predicts unsafe tool calls across all five models (AUC 0.76-0.86). However, restoring the signal to the respective text-only value through activation patching only prevents a subset of unsafe calls, primarily by suppressing tool use rather than by producing safer calls. Steering along the refusal direction nearly eliminates unsafe calls only at strengths that also suppress benign tool use or degrade the output quality. Our findings indicate that the identified refusal direction contributes to whether a model acts, but only partially explains the refusal divergence. Therefore, evaluating the safety of tool-calling agents requires directly examining their actions along with their textual responses.", "preset": "refusal directions", "cites": 0, "triaged": false}, {"id": "2610.28897", "title": "Is Refusal Direction Universal across Low-Resourced Languages?", "authors": ["Anastasiia Ivanova"], "date": "2026-10-20", "cats": ["cs.CL", "cs.LG"], "abstract": "Refusal directions have been shown to transfer cross-lingually with near-perfect effectiveness across safety-aligned languages (Wang et al., 2025), reportedly regardless of resource level. However, the only truly low-resourced language evaluated is Yoruba, which is strongly misaligned and shows limited transfer, leaving open how refusal directions behave for other low-resourced languages. We extend PolyRefuse to three additional low-resourced languages (Belarusian, Bashkir, and Tajik) and replicate the pipeline of (Wang et al., 2025) on Qwen2.5-14B-Instruct. We find that universality is graded rather than binary: directions from safety-aligned and partially-aligned languages transfer broadly, while those from strongly misaligned languages fail to reliably modulate refusal behavior on any target tested, including other misaligned languages, once ceiling effects are accounted for. Geometric alignment and behavioral transfer are further shown to be partially dissociated. These findings complicate the universality claim and suggest that users of the least-resourced, most strongly misaligned languages may face weaker safety guarantees.", "preset": "refusal directions", "cites": 0, "triaged": false}, {"id": "2610.27375", "title": "Shaped SAEs: Expanding the Toolkit for Mechanistic Interpretability", "authors": ["Oveys Delafrooz Noroozi", "Bhagyashree Puranik", "Upamanyu Madhow"], "date": "2026-10-19", "cats": ["cs.LG"], "abstract": "Sparse autoencoders (SAEs) seek to decompose the dense activations of large language models (LLMs) into sparse, potentially interpretable features using a learned overcomplete dictionary. In this work, we ask whether it is possible to enhance the semantic selectivity of the learned dictionary atoms by linearly \\emph{shaping} the dense activations prior to learning an SAE. We explore rank-reducing transformations based on the recently introduced J-space corresponding to the averaged Jacobian from the current layer to the LLM output, projecting activations onto the ``live'' subspace spanned by eigenmodes of the Jacobian with larger singular values (which we expect to be more semantically relevant). We also introduce a new approach for training SAEs in which (a)~an affine shaping transformation is learned along with the dictionary atoms, (b)~the atom selection mechanism is based on the TopK projections along the one-dimensional subspace spanned by the atoms, and (c)~reconstruction is carried out using the same atoms. We call this approach a Matched Filter SAE (MF-SAE) based on analogies with communication theory. The promise of shaping is demonstrated via evaluations against dense activations and state-of-the-art SAEs on benchmarks including SAEBench and SAE Probes.", "preset": "sparse probes", "cites": 0, "triaged": false}, {"id": "2610.24908", "title": "A Symmetry-Matching Approach to Blind-Spot Reduction in Sparse Autoencoders", "authors": ["Csaba Balogh"], "date": "2026-10-17", "cats": ["cs.LG"], "abstract": "Language models can treat semantically distinct inputs as interchangeable at the representation level, creating blind spots that standard sparse autoencoder (SAE) objectives do not target. In safety-critical settings such as clinical dosage extraction, legal clause interpretation, or financial amount verification, such failures can propagate silently into downstream decisions. We study this problem as one of feature-basis orientation. Building on a symmetry-matching view from algebraic error-detection theory, we add a differentiable $V_{\\mathrm{Gini}}$ regularisation term to SAE training that penalises uneven perturbation response within a specified family. Across GPT-2, Gemma 2, and Qwen 2.5, a frozen multi-seed evaluation shows that $V$-regularisation raises both relative and absolute lower-tail responses while reducing response-profile imbalance, with no material general-text reconstruction degradation. JumpReLU and minimum description length (MDL) objectives remain close to the Standard SAE profile under the same protocol. Family-geometry controls show that the effect is not explained by template duplication or a single dominant perturbation family, and held-out probes plus null-calibrated separation tests evaluate how far the representation-level change carries to downstream discriminability. A zero-shot audit on out-of-distribution clinical radiology minimal pairs finds the relative weak-tail lift in all evaluated model-by-family cells, not perfectly rank-aligned with the trained statistic, and a held-out family audit finds it on family kinds never used in training. Together, the results show that perturbation-aware SAE training can reorient feature bases toward safety-relevant input changes while leaving downstream validation as a separate empirical step.", "preset": "sparse probes", "cites": 0, "triaged": false}, {"id": "2610.24118", "title": "Do LMs Know What Variables Do? Interpreting Code Representations via Variable Roles", "authors": ["Célian Vasson", "Daniil Ognev", "Kentaro Inui", "Benjamin Heinzerling"], "date": "2026-10-16", "cats": ["cs.CL", "cs.LG"], "abstract": "Variable roles describe recurring behaviors such as accumulation, traversal, and retaining the best candidate encountered. We use Sajaniemi's independently defined taxonomy to study which role distinctions can be recovered from large language models, how sparse autoencoders (SAEs) retain those distinctions, and whether associated directions support control of generation. We introduce static annotation rules for all eleven roles and a corpus of 126,926 natural-code files across five languages. Across five model-SAE systems, residual probes outperform individual SAE features and tested lexical baselines, with modest losses after neutral target renaming. Combining SAE features closes much of the single-feature gap, but probes on SAE reconstructions are less sensitive to role-changing edits reviewed by LLMs. High paired ranking accuracy coexists with frequent false positives at fixed thresholds. During generation, interventions often change role annotations at the cost of correctness; changes accompanied by passing tests show no clear aggregate advantage over random controls. The benchmark separates role-related recoverability, SAE fidelity, and correctness-preserving control through matched prediction, source edits, and generation interventions.", "preset": "sparse probes", "cites": 0, "triaged": false}, {"id": "2610.29271", "title": "ARCANA: A Benchmark for Abstraction and Analogical Reasoning", "authors": ["Ruqi Chen", "Zilei Wang", "Wei Wang"], "date": "2026-10-21", "cats": ["cs.AI"], "abstract": "Analogical reasoning is widely considered a fundamental component of human intelligence. Few benchmarks are designed to explicitly test far analogical reasoning - reasoning between domains that are superficially dissimilar yet share deep relational or structural similarities. In this work, we introduce an analogical reasoning benchmark called Abstraction and Reasoning Corpus of ANAlogy (ARCANA). The tasks of ARCANA require performing far analogical mappings from real-world objects or physical phenomena to abstract grid-based transformations, different from the well-known ARC-AGI benchmark which primarily emphasized innate human priors. We validate ARCANA through a human study, demonstrating that humans solve these tasks reliably. In contrast, evaluations across a range of large language models show a distinct performance gap compared to humans, revealing systematic failure modes that remain challenging for current models. To address this gap, we propose ConceptSIR, a reasoning framework based on concept slippage, introspection, and reflection. Experiments demonstrate that ConceptSIR enables standard LLMs to solve several challenging ARCANA tasks that were unsolved by direct prompting in our evaluation. Overall, our results suggest that far analogical reasoning remains an open problem for contemporary LLMs. All the materials are available at sites.google.com/view/arcanacogtest. The complete codebase, including benchmark, and ConceptSIR, is publicly available at https://github.com/density-11/arcana-test. All ARCANA data and task instances can be accessed and explored at https://arcanacogtest.org/.", "preset": "self-representation", "cites": 0, "triaged": false}, {"id": "2610.17495", "title": "A Sense of Proprioception in Language Models", "authors": ["Jonas Geiping"], "date": "2026-10-12", "cats": ["cs.LG", "cs.CL"], "abstract": "In humans, proprioception corresponds to the sense of self-movement or position, e.g. understanding the position of one's arm. This sense is often less well-understood and in popular understanding sometimes conflated with introspection. But, notably, proprioception is a separate sense, with dedicated receptors and verifiable outcomes. On the other hand though, language models cannot observe their own internal states during training (and for example answer the question which experts activated in a certain layer of an MoE) and so cannot accurately report on them. Yet, such information is, by virtue of being internal to the model, both accessible, and readily constructed into verifiable signals. We argue that this provides the basis for a digital analog of proprioception. As such, we train models through SFT and on-policy training to equip them with this ability. We show that modern models can be trained to understand a range of subtypes of proprioception, such as routing decision awareness, token entropy, decision depth or logit lens information, without affecting model capabilities. We then run these models through a broad evaluation of situational awareness, legibility, and epiphenomenality, to evaluate in what ways access to proprioception changes model behavior.", "preset": "self-representation", "cites": 0, "triaged": false}, {"id": "2610.12667", "title": "perturber: A Stateless Service for Semantics-Preserving Text Perturbations", "authors": ["Khoi-Nguyen Tran"], "date": "2026-10-08", "cats": ["cs.CL"], "abstract": "Large language model (LLM) evaluations on clean benchmarks overstate model robustness: real inputs arrive perturbed, and these meaning-preserving variants routinely move model answers. Studying this systematically requires applying perturbations one at a time, reproducibly, and identically wherever they run, yet existing tools couple them to a benchmarking stack rather than packaging them as a reusable transform layer. We present perturber, a stateless service and Python library that applies exactly one semantics-preserving perturbation per call, drawn from a first-party catalog of 68 perturbations across 11 families. It turns on a single primitive, with composition left to the caller chaining calls, so the service and the library produce identical output by construction. We evaluate the tool itself, its correctness, reproducibility, and cost, rather than any model's robustness, measuring meaning-preservation per perturbation rather than assuming it. The demonstration adds a live playground, an introspectable catalog for benchmark selection, and a one-command reproducible evaluation.", "preset": "self-representation", "cites": 0, "triaged": false}, {"id": "2610.32182", "title": "Depth-Dependent Safety Geometry in Vision-Language Models: Layer-Wise Localization and Bidirectional Refusal Control", "authors": ["Muhammad Zeeshan Karamat", "Syed Talal Hassan", "Christiana Chamon Garcia"], "date": "2026-10-23", "cats": ["cs.CV", "cs.CL", "cs.CR", "cs.LG"], "abstract": "Vision-Language Models (VLMs) are widely deployed, yet the internal mechanisms behind their safety behavior remain poorly understood. We present a lightweight inference-time framework for localizing and manipulating safety-sensitive representations in frozen VLMs, without retraining or modifying parameters. On Qwen3-VL-4B, layer-wise activation divergence analysis reveals non-uniform safety geometry across depth. Causal interventions show that early vision layers support strong bidirectional refusal control through activation steering along a learned safety direction, with unsafe rejection spanning 6%-96%, whereas later layers respond more to activation magnitude scaling and exhibit a substantial safety-selectivity trade-off. Deeper layers remain well separated along the safety direction yet are largely insensitive to steering, distinguishing representational separability from causal controllability. InternVL2.5-4B shows qualitatively similar depth-dependent activation geometry despite differences in layer location and magnitude. Our results expose a white-box, representation-level refusal-bypass attack surface in VLM vision encoders and motivate inference-time stabilization of safety-sensitive representations.", "preset": "steering", "cites": 0, "triaged": false}, {"id": "2610.30938", "title": "The Geometry of Meaning in Neural Manifolds", "authors": ["Valentino Maiorca"], "date": "2026-10-22", "cats": ["cs.AI"], "abstract": "Just as different languages express the same concept through different words, neural networks express similar functions through incompatible coordinate systems. Different architectures, random initializations, and optimization trajectories produce incompatible parameterizations in extrinsic coordinates, obscuring functional relationships between independently trained models. When models independently solve similar tasks on related data, do their learned representations share exploitable structure despite incompatible coordinates? This thesis shows that semantic correspondence is a fundamental primitive revealing shared geometric structure beneath incompatible parameterizations. By identifying which elements refer to the same semantic content, correspondence breaks the symmetry of arbitrary implementation choices, anchoring incompatible systems to a shared semantic frame and revealing the intrinsic geometry that enables zero-shot transformation between independently trained models. Building on this principle, fourteen contributions explore correspondence-based alignment across zero-shot model stitching, cross-modal translation, policy transfer, activation steering, and neural decoding. They span domains (vision, language, reinforcement learning, neuroscience), architectures (CNNs, Transformers, graph networks), and scales (from small supervised models to billion-parameter generative systems). Each exploits different geometric properties (angular, metric, spectral, sparse, or distributional), yet all instantiate the same principle. It extends beyond artificial systems: fMRI data show that different human brains processing identical stimuli exhibit alignable geometric structure. By revealing intrinsic geometric structure beneath extrinsic parameterization, semantic correspondence transforms model isolation into interoperability.", "preset": "steering", "cites": 0, "triaged": false}, {"id": "2610.28992", "title": "Language Impairment as a Lens onto Large Language Models", "authors": ["Muxuan He", "Wang Bill Zhu", "Yue Chen", "Elsi Kaiser", "Weizhi Du", "Yao Du", "Samuel Nastase", "Yanjun Gao"], "date": "2026-10-20", "cats": ["cs.CL"], "abstract": "Although large language models (LLMs) encode language in highly distributed spaces, they remain vulnerable to focal disruptions---a phenomenon strikingly similar to how localized brain damage causes clinical aphasia in humans. To investigate this theoretical tension, we ask whether LLMs possess a functional structure analogous to the human language system, by introducing a novel mechanistic interpretability framework inspired by aphasia. Through two complementary approaches, classifier-guided lesioning and continuous activation steering, we systematically induce aphasia-like breakdowns in LLMs. We find that language functions can be successfully isolated to discrete structural circuits and continuous representational vectors, yet these functions remain densely entangled with significant circuit overlap and vector similarities across distinct aphasic profiles. Furthermore, while steering generalizes robustly across downstream tasks, structural lesioning remains asymmetrically constrained. By bridging neuropsychology and mechanistic interpretability, we demonstrate that LLMs, functionally analogous to biological brains, rely on a densely entangled architecture that can be systematically mapped through clinically-informed interventions.", "preset": "steering", "cites": 0, "triaged": false}]</script>
+<script src="/assets/vendor/three.r128.min.js"></script>
+<script>
+/* ---------- shared state ---------- */
+const WL = { tideOn: true, moonOn: true, onTheme: [] };
+const root = document.documentElement;
+const reduceMQ = matchMedia('(prefers-reduced-motion: reduce)');
+
+/* ---------- theme ---------- */
+(function(){
+  const btn = document.getElementById('themebtn');
+  const darkMQ = matchMedia('(prefers-color-scheme: dark)');
+  const isDark = () => root.dataset.theme ? root.dataset.theme === 'dark' : darkMQ.matches;
+  const label = () => { btn.textContent = isDark() ? 'Day' : 'Night'; };
+  const notify = () => { label(); requestAnimationFrame(() => WL.onTheme.forEach(f => f())); };
+  btn.addEventListener('click', () => { root.dataset.theme = isDark() ? 'light' : 'dark'; notify(); });
+  darkMQ.addEventListener('change', notify);
+  new MutationObserver(notify).observe(root, { attributes: true, attributeFilter: ['data-theme', 'style'] });
+  label();
+})();
+
+/* ---------- tweaks (design iteration only) ---------- */
+(function(){
+  const hue = document.getElementById('tw-hue');
+  if (!hue) return;
+  hue.addEventListener('input', () => root.style.setProperty('--shore', `oklch(64% 0.065 ${hue.value})`));
+  document.getElementById('tw-tide').addEventListener('change', e => {
+    WL.tideOn = e.target.checked;
+    document.querySelectorAll('.tidewave path').forEach(p => p.style.animationPlayState = e.target.checked ? 'running' : 'paused');
+  });
+  document.getElementById('tw-moon').addEventListener('change', e => {
+    WL.moonOn = e.target.checked;
+    document.body.classList.toggle('no-moon', !e.target.checked);
+    WL.onTheme.forEach(f => f());
+  });
+})();
+
+/* ---------- the 3D vesica ---------- */
+(function(){
+  const fig = document.getElementById('vesica');
+  const canvas = document.getElementById('gl');
+  const readout = document.getElementById('readout');
+  if (!window.THREE) return;
+  let renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, preserveDrawingBuffer: true });
+  } catch (e) { return; }
+  if (!renderer.getContext()) return;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setClearColor(0x000000, 0);
+
+  const R = 1.5, H = R / 2;                // centres one radius apart: the vesica
+  const A = 0.05;                          // tidal amplitude, scene units
+  const small = window.innerWidth < 700;
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
+  const CAMD = 10.3;
+  camera.position.set(0, 0, CAMD);
+  camera.lookAt(0, 0, 0);
+
+  const cx = document.createElement('canvas').getContext('2d', { willReadFrequently: true });
+  cx.canvas.width = cx.canvas.height = 1;
+  const toColor = s => {
+    cx.clearRect(0, 0, 1, 1); cx.fillStyle = '#000'; cx.fillStyle = s; cx.fillRect(0, 0, 1, 1);
+    const d = cx.getImageData(0, 0, 1, 1).data;
+    return new THREE.Color(d[0] / 255, d[1] / 255, d[2] / 255);
+  };
+  const C = h => new THREE.Color(h);
+  const U = {
+    t: { value: 0 }, tide: { value: 0 }, px: { value: 1.6 },
+    shore: { value: C('#8f9c7a') },
+    wDeep: { value: C('#0e4656') }, wGlow: { value: C('#7fe0e6') }, wLife: { value: C('#ff9e7a') },
+    gold: { value: C('#e8c27a') }, foam: { value: C('#f4fbf8') }
+  };
+
+  const GL = `
+    float hash(vec3 p){ return fract(sin(dot(p, vec3(12.9898,78.233,37.719)))*43758.5453); }
+    float caustic(vec2 uv, float time){
+      vec2 p = mod(uv*6.28318, 6.28318) - 250.0;
+      vec2 i = p; float c = 1.0; float inten = 0.005;
+      for (int n = 0; n < 5; n++) {
+        float tt = time * (1.0 - (3.5 / float(n+1)));
+        i = p + vec2(cos(tt - i.x) + sin(tt + i.y), sin(tt - i.y) + cos(tt + i.x));
+        c += 1.0/length(vec2(p.x / (sin(i.x+tt)/inten), p.y / (cos(i.y+tt)/inten)));
+      }
+      c /= 5.0; c = 1.17 - pow(c, 1.4);
+      return clamp(pow(abs(c), 8.0), 0.0, 1.0);
+    }
+    vec3 irid(float x){ return 0.55 + 0.45*cos(6.28318*(x + vec3(0.0, 0.14, 0.32))); }
+  `;
+
+  const world = new THREE.Group();
+  scene.add(world);
+
+  /* ---- WATER: a living membrane. Breathing surface, caustic light, warm life low in the body ---- */
+  const waterVS = `
+    uniform float t; varying vec3 vN; varying vec3 vV; varying vec3 vP;
+    void main(){
+      vec3 p = position;
+      float w = sin(p.x*3.1 + t*0.9)*sin(p.z*2.7 - t*0.7)*0.5 + sin(p.y*4.3 + t*1.1)*0.5;
+      p += normal * w * 0.02;
+      vec4 mv = modelViewMatrix * vec4(p, 1.0);
+      vN = normalize(normalMatrix * normal); vV = normalize(-mv.xyz); vP = p;
+      gl_Position = projectionMatrix * mv;
+    }`;
+  const waterFS = GL + `
+    uniform float t; uniform vec3 wDeep; uniform vec3 wGlow; uniform vec3 wLife; uniform float back;
+    varying vec3 vN; varying vec3 vV; varying vec3 vP;
+    void main(){
+      vec3 n = normalize(vN), v = normalize(vV);
+      float f = 1.0 - abs(dot(n, v));
+      float rim = pow(f, 2.2);
+      float cs = caustic(vP.xz*0.42 + vec2(vP.y*0.25, -vP.y*0.15), t*0.32);
+      vec3 L = normalize(vec3(-0.5, 0.8, 0.6));
+      float spec = pow(max(dot(reflect(-L, n), v), 0.0), 70.0);
+      float spec2 = pow(max(dot(reflect(-normalize(vec3(0.7, 0.25, 0.6)), n), v), 0.0), 160.0);
+      float low = smoothstep(0.2, -1.1, vP.y);
+      vec3 c = mix(wDeep, wGlow, rim*0.85);
+      c += wGlow * cs * 0.6;
+      c = mix(c, wLife, low * 0.3 * (1.0 - rim));
+      c += vec3(1.0) * (spec*0.75 + spec2*0.5);
+      float a = 0.15 + rim*0.6 + cs*0.3 + spec*0.8 + spec2*0.7;
+      a *= back > 0.5 ? 0.4 : 1.0;
+      gl_FragColor = vec4(c, clamp(a, 0.0, 1.0));
+    }`;
+  const waterGeo = new THREE.SphereGeometry(R, small ? 72 : 112, small ? 48 : 80);
+  const waterBack = new THREE.Mesh(waterGeo, new THREE.ShaderMaterial({ uniforms: Object.assign({ back: { value: 1 } }, U), vertexShader: waterVS, fragmentShader: waterFS, transparent: true, depthWrite: false, side: THREE.BackSide }));
+  const waterFront = new THREE.Mesh(waterGeo, new THREE.ShaderMaterial({ uniforms: Object.assign({ back: { value: 0 } }, U), vertexShader: waterVS, fragmentShader: waterFS, transparent: true, depthWrite: false }));
+  waterBack.position.y = waterFront.position.y = H;
+  world.add(waterBack, waterFront);
+
+  /* motes: slow bioluminescent life suspended in the water */
+  {
+    const M = small ? 140 : 240, pos = new Float32Array(M * 3), sd = new Float32Array(M);
+    for (let i = 0; i < M; ) {
+      const x = (Math.random() * 2 - 1) * R, y = (Math.random() * 2 - 1) * R + H, z = (Math.random() * 2 - 1) * R;
+      if (x * x + (y - H) ** 2 + z * z > (R * 0.9) ** 2) continue;
+      if (x * x + (y + H) ** 2 + z * z < (R * 1.04) ** 2) continue;
+      pos.set([x, y, z], i * 3); sd[i] = Math.random(); i++;
+    }
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    g.setAttribute('seed', new THREE.BufferAttribute(sd, 1));
+    world.add(new THREE.Points(g, new THREE.ShaderMaterial({
+      uniforms: U, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+      vertexShader: `
+        uniform float t; uniform float px; attribute float seed; varying float vA; varying float vW;
+        void main(){
+          vec3 p = position; float s = seed*6.2831;
+          p.y += sin(t*0.35 + s)*0.1; p.x += sin(t*0.27 + s*1.7)*0.06; p.z += cos(t*0.31 + s*1.3)*0.06;
+          vec4 mv = modelViewMatrix * vec4(p, 1.0);
+          vA = 0.3 + 0.7*pow(max(sin(t*0.6 + s*3.0), 0.0), 3.0);
+          vW = step(0.84, seed);
+          gl_PointSize = px * (2.0 + seed*3.0);
+          gl_Position = projectionMatrix * mv;
+        }`,
+      fragmentShader: `
+        uniform vec3 wGlow; uniform vec3 wLife; varying float vA; varying float vW;
+        void main(){ float r = length(gl_PointCoord - 0.5); float g = smoothstep(0.5, 0.0, r); g *= g; gl_FragColor = vec4(mix(wGlow, wLife, vW), g*vA*0.85); }`
+    })));
+  }
+
+  /* ---- SAND becoming SILICON: grains, an ordered lattice, firing nodes, a scanning band ---- */
+  const silicon = new THREE.Group();
+  silicon.position.y = -H;
+  world.add(silicon);
+  const latFS = GL + `
+    uniform float t; uniform vec3 gold; uniform float uA; varying vec3 vO; varying float vF; varying float vBack;
+    void main(){
+      if (length(vO - vec3(0.0, ${R.toFixed(3)}, 0.0)) < ${R.toFixed(3)}) discard;   // inside the water: that is the lens
+      float scanY = mod(t*0.42, 4.4) - 2.2;
+      float scan = exp(-pow((vO.y - scanY)*6.0, 2.0));
+      float pulse = pow(fract(dot(vO, vec3(0.61, 1.27, 0.43))*1.6 - t*0.28), 14.0);
+      vec3 col = mix(irid(vF*0.8 + vO.y*0.12 + t*0.02), gold, 0.3);
+      float a = (0.05 + 0.5*pow(vF, 1.8) + scan*0.55 + pulse*0.45) * (vBack > 0.5 ? 0.32 : 1.0) * uA;
+      gl_FragColor = vec4(col * (0.75 + scan*0.9 + pulse*0.8), a);
+    }`;
+  const latVS = `
+    varying vec3 vO; varying float vF; varying float vBack;
+    void main(){
+      vO = position;
+      vec4 mv = modelViewMatrix * vec4(position, 1.0);
+      float d = dot(normalize(normalMatrix * position), normalize(-mv.xyz));
+      vF = 1.0 - abs(d); vBack = step(d, 0.0);
+      gl_Position = projectionMatrix * mv;
+    }`;
+  const lattice = new THREE.LineSegments(new THREE.WireframeGeometry(new THREE.IcosahedronGeometry(R * 0.998, 4)),
+    new THREE.ShaderMaterial({ uniforms: Object.assign({ uA: { value: 1 } }, U), vertexShader: latVS, fragmentShader: latFS, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
+  const core = new THREE.LineSegments(new THREE.WireframeGeometry(new THREE.IcosahedronGeometry(R * 0.62, 2)),
+    new THREE.ShaderMaterial({ uniforms: Object.assign({ uA: { value: 0.45 } }, U), vertexShader: latVS, fragmentShader: latFS, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
+  silicon.add(lattice, core);
+
+  {   // nodes of the lattice that fire
+    const src = new THREE.IcosahedronGeometry(R * 0.998, 4).attributes.position, seen = new Map(), out = [];
+    for (let i = 0; i < src.count; i++) {
+      const x = src.getX(i), y = src.getY(i), z = src.getZ(i), k = x.toFixed(3) + y.toFixed(3) + z.toFixed(3);
+      if (seen.has(k)) continue; seen.set(k, 1);
+      if (x * x + (y - R) ** 2 + z * z < R * R) continue;
+      out.push(x, y, z);
+    }
+    const g = new THREE.BufferGeometry(), n = out.length / 3, sd = new Float32Array(n);
+    for (let i = 0; i < n; i++) sd[i] = Math.random();
+    g.setAttribute('position', new THREE.Float32BufferAttribute(out, 3));
+    g.setAttribute('seed', new THREE.BufferAttribute(sd, 1));
+    silicon.add(new THREE.Points(g, new THREE.ShaderMaterial({
+      uniforms: U, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+      vertexShader: `
+        uniform float t; uniform float px; attribute float seed; varying float vA; varying float vFire;
+        void main(){
+          vec4 mv = modelViewMatrix * vec4(position, 1.0);
+          float d = dot(normalize(normalMatrix * position), normalize(-mv.xyz));
+          float f = 1.0 - abs(d);
+          vFire = pow(max(sin(t*(0.5 + seed*0.9) + seed*60.0), 0.0), 26.0);
+          vA = (0.1 + 0.45*pow(f, 2.0) + vFire*1.3) * (d < 0.0 ? 0.3 : 1.0);
+          gl_PointSize = px * (1.3 + vFire*4.0);
+          gl_Position = projectionMatrix * mv;
+        }`,
+      fragmentShader: `
+        uniform vec3 gold; varying float vA; varying float vFire;
+        void main(){ float r = length(gl_PointCoord - 0.5); float g = smoothstep(0.5, 0.05, r); gl_FragColor = vec4(mix(gold, vec3(1.0), vFire*0.7), g*vA); }`
+    })));
+  }
+
+  {   // a fine dust of sand on the surface, catching iridescent light
+    const N = small ? 1800 : 3200, pos = new Float32Array(N * 3), sd = new Float32Array(N);
+    for (let i = 0; i < N; ) {
+      const u = Math.random() * 2 - 1, th = Math.random() * Math.PI * 2, s = Math.sqrt(1 - u * u), r = R * (0.97 + Math.random() * 0.03);
+      const x = r * s * Math.cos(th), y = r * u, z = r * s * Math.sin(th);
+      if (x * x + (y - R) ** 2 + z * z < R * R) continue;
+      pos.set([x, y, z], i * 3); sd[i] = Math.random(); i++;
+    }
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    g.setAttribute('seed', new THREE.BufferAttribute(sd, 1));
+    silicon.add(new THREE.Points(g, new THREE.ShaderMaterial({
+      uniforms: U, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+      vertexShader: GL + `
+        uniform float t; uniform float px; attribute float seed; varying vec3 vC; varying float vA;
+        void main(){
+          vec4 mv = modelViewMatrix * vec4(position, 1.0);
+          float d = dot(normalize(normalMatrix * position), normalize(-mv.xyz));
+          float f = 1.0 - abs(d);
+          vC = irid(seed*0.6 + f*0.7 + t*0.015);
+          vA = (0.06 + 0.5*pow(f, 1.5)) * (0.7 + 0.3*sin(t*0.8 + seed*40.0)) * (d < 0.0 ? 0.4 : 1.0);
+          gl_PointSize = px * (0.6 + seed*0.8);
+          gl_Position = projectionMatrix * mv;
+        }`,
+      fragmentShader: `
+        varying vec3 vC; varying float vA;
+        void main(){ vec2 d = gl_PointCoord - 0.5; if (dot(d, d) > 0.25) discard; gl_FragColor = vec4(vC, vA); }`
+    })));
+  }
+
+  /* ---- THE SHORE: wet sand. Above the line it is submerged and glistening under caustics;
+          below the line the silicon's traces surface in it. Foam lace and glitter at the line ---- */
+  function lensHalf(sign){
+    const pts = [], S = 80;
+    for (let i = 0; i <= S; i++) {
+      const y = sign * H * (sign > 0 ? i / S : 1 - i / S);
+      pts.push(new THREE.Vector2(Math.sqrt(Math.max(R * R - (H + Math.abs(y)) ** 2, 0)), y));
+    }
+    const m = new THREE.ShaderMaterial({
+      uniforms: Object.assign({ cy: { value: sign > 0 ? -H : H } }, U), side: THREE.DoubleSide,
+      vertexShader: `
+        uniform float cy; varying vec3 vN; varying vec3 vV; varying vec3 vP;
+        void main(){
+          vec4 mv = modelViewMatrix * vec4(position, 1.0);
+          vN = normalize(normalMatrix * normalize(position - vec3(0.0, cy, 0.0)));
+          vV = normalize(-mv.xyz); vP = position;
+          gl_Position = projectionMatrix * mv;
+        }`,
+      fragmentShader: GL + `
+        uniform float t; uniform float tide; uniform vec3 shore; uniform vec3 wGlow; uniform vec3 gold; uniform vec3 foam;
+        varying vec3 vN; varying vec3 vV; varying vec3 vP;
+        void main(){
+          vec3 n = normalize(vN), v = normalize(vV), L = normalize(vec3(-0.45, 0.75, 0.55));
+          float dif = 0.45 + 0.6*max(dot(n, L), 0.0);
+          float sub = smoothstep(tide - 0.02, tide + 0.02, vP.y);
+          vec3 wetC = mix(shore, vec3(0.12, 0.30, 0.30), 0.42);
+          vec3 dryC = mix(shore, vec3(0.80, 0.70, 0.48), 0.22);
+          vec3 c = mix(dryC, wetC, sub) * dif;
+          c *= 0.92 + 0.12*hash(floor(vP*160.0));
+          float cs = caustic(vP.xz*0.55 + vec2(vP.y*0.3), t*0.32);
+          c += wGlow * cs * 0.45 * sub;
+          float spec = pow(max(dot(reflect(-L, n), v), 0.0), 48.0);
+          c += foam * spec * (0.15 + 0.4*sub);
+          float fr = pow(1.0 - abs(dot(n, v)), 3.0);
+          c += wGlow * fr * 0.35 * sub;
+          float ang = atan(vP.z, vP.x);
+          vec2 cell = vec2(ang*24.0/6.2831, vP.y*22.0);
+          vec2 gg = abs(fract(cell) - 0.5);
+          float tr = smoothstep(0.455, 0.5, max(gg.x, gg.y)) * step(0.45, hash(vec3(floor(cell), 1.0)));
+          float pulse = pow(fract(vP.y*1.5 - t*0.25 + ang*0.2), 12.0);
+          c += gold * tr * (0.16 + pulse*0.9) * (1.0 - sub);
+          float near = exp(-pow((vP.y - tide)*9.0, 2.0));
+          c += foam * step(0.986, hash(floor(vP*240.0) + floor(t*1.5)*0.37)) * near * 0.9;
+          float lace = exp(-pow((vP.y - tide)*55.0, 2.0)) * (0.55 + 0.45*sin(ang*40.0 + t*2.0 + sin(ang*13.0)*2.0));
+          c = mix(c, foam, clamp(lace, 0.0, 1.0)*0.85);
+          gl_FragColor = vec4(c, 1.0);
+        }`
+    });
+    const mesh = new THREE.Mesh(new THREE.LatheGeometry(pts, 180), m);
+    mesh.scale.setScalar(0.997);
+    return mesh;
+  }
+  const lens = new THREE.Group();
+  lens.add(lensHalf(1), lensHalf(-1));
+  world.add(lens);
+
+  /* the waterline: foam where the tide plane meets the lens */
+  const rAt = y => Math.sqrt(Math.max(R * R - (H + Math.abs(y)) ** 2, 0));
+  const tideRing = new THREE.Mesh(new THREE.TorusGeometry(1, 0.008, 8, 280), new THREE.MeshBasicMaterial({ color: 0xf4fbf8 }));
+  const tideRing2 = new THREE.Mesh(new THREE.TorusGeometry(1, 0.0045, 8, 280), new THREE.MeshBasicMaterial({ color: 0xbff3ea, transparent: true, opacity: 0.5 }));
+  [tideRing, tideRing2].forEach(m => { m.rotation.x = Math.PI / 2; world.add(m); });
+
+  /* the two centres, each on the other's edge */
+  const dotW = new THREE.Mesh(new THREE.SphereGeometry(0.036, 16, 12), new THREE.MeshBasicMaterial({ color: 0xbff3f3 }));
+  const dotS = new THREE.Mesh(new THREE.SphereGeometry(0.036, 16, 12), new THREE.MeshBasicMaterial({ color: 0xf3dca8 }));
+  dotW.position.y = H; dotS.position.y = -H;
+  world.add(dotW, dotS);
+
+  /* billboards: the two drawn circles and their halos */
+  const ringGeo = new THREE.RingGeometry(1 - 0.0034, 1 + 0.0034, 256);
+  const ringW = new THREE.Mesh(ringGeo, new THREE.MeshBasicMaterial({ color: 0x9fe8ec, transparent: true, opacity: 0.75, depthTest: false }));
+  const ringS = new THREE.Mesh(ringGeo, new THREE.MeshBasicMaterial({ color: 0xe8c27a, transparent: true, opacity: 0.75, depthTest: false }));
+  ringW.renderOrder = ringS.renderOrder = 10;
+  scene.add(ringW, ringS);
+  const haloMat = hex => new THREE.ShaderMaterial({
+    uniforms: { hc: { value: C(hex) } }, transparent: true, depthWrite: false, depthTest: false, blending: THREE.AdditiveBlending,
+    vertexShader: `varying vec2 vU; void main(){ vU = position.xy; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+    fragmentShader: `uniform vec3 hc; varying vec2 vU; void main(){ float r = length(vU)*1.7; float g = exp(-pow((r - 1.0)*5.0, 2.0))*0.26 + smoothstep(1.7, 0.4, r)*0.06; gl_FragColor = vec4(hc, g); }`
+  });
+  const haloW = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), haloMat('#4fc3cf'));
+  const haloS = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), haloMat('#d9a85a'));
+  haloW.renderOrder = haloS.renderOrder = -1;
+  scene.add(haloW, haloS);
+
+  /* the moon: open, dashed, silver, outside both. Its orbit drives the tide */
+  const moonPts = [];
+  for (let i = 0; i <= 64; i++) { const a = i / 64 * Math.PI * 2; moonPts.push(new THREE.Vector3(Math.cos(a), Math.sin(a), 0)); }
+  const moonMat = new THREE.LineDashedMaterial({ color: 0xdfe6e8, dashSize: 0.09, gapSize: 0.08, transparent: true, opacity: 0.95 });
+  const moon = new THREE.Line(new THREE.BufferGeometry().setFromPoints(moonPts), moonMat);
+  moon.computeLineDistances();
+  moon.renderOrder = 11;
+  const moonHalo = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), haloMat('#9fb4bc'));
+  scene.add(moon, moonHalo);
+  const MR = 0.16, ORB = 2.55, INC = 0.42;
+  const orbitPts = [];
+  for (let i = 0; i <= 220; i++) { const a = i / 220 * Math.PI * 2; orbitPts.push(new THREE.Vector3(ORB * Math.cos(a), ORB * Math.sin(a) * Math.sin(INC), ORB * Math.sin(a) * Math.cos(INC))); }
+  const orbit = new THREE.Line(new THREE.BufferGeometry().setFromPoints(orbitPts), new THREE.LineDashedMaterial({ color: 0xdfe6e8, dashSize: 0.03, gapSize: 0.09, transparent: true, opacity: 0.28 }));
+  orbit.computeLineDistances();
+  world.add(orbit);
+
+  function applyTheme(){
+    U.shore.value.copy(toColor(getComputedStyle(root).getPropertyValue('--shore').trim()));
+    moon.visible = moonHalo.visible = orbit.visible = WL.moonOn;
+    kick();
+  }
+
+  /* drag to turn; it returns to rest. Scrolling tilts it */
+  let yaw = 0, pitch = 0, dYaw = 0, dPitch = 0, dragging = false, lx = 0, ly = 0, scrollTilt = 0;
+  canvas.addEventListener('pointerdown', e => { dragging = true; lx = e.clientX; ly = e.clientY; canvas.setPointerCapture(e.pointerId); kick(); });
+  canvas.addEventListener('pointermove', e => {
+    if (!dragging) return;
+    dYaw += (e.clientX - lx) * 0.008; dPitch = Math.max(-1.1, Math.min(1.1, dPitch + (e.clientY - ly) * 0.006));
+    lx = e.clientX; ly = e.clientY; kick();
+  });
+  const end = () => { dragging = false; };
+  canvas.addEventListener('pointerup', end); canvas.addEventListener('pointercancel', end);
+  function onScroll(){
+    const h = fig.getBoundingClientRect();
+    scrollTilt = Math.min(1, Math.max(0, (-h.top + 80) / Math.max(1, h.height))) * 0.5; kick();
+  }
+  addEventListener('scroll', onScroll, { passive: true });
+
+  function size(){
+    const r = canvas.getBoundingClientRect();
+    if (!r.width) return;
+    renderer.setSize(r.width, r.height, false);
+    camera.aspect = r.width / r.height;
+    camera.updateProjectionMatrix();
+    U.px.value = Math.max(1.2, r.width / 330) * renderer.getPixelRatio() * 0.85;
+    kick();
+  }
+  new ResizeObserver(size).observe(canvas);
+
+  const tmp = new THREE.Vector3();
+  function billboard(mesh, cy, k){
+    tmp.set(0, cy, 0); world.localToWorld(tmp);
+    mesh.position.copy(tmp);
+    const d = camera.position.distanceTo(tmp);
+    mesh.scale.setScalar(R * d / Math.sqrt(d * d - R * R) * k);
+    mesh.quaternion.copy(camera.quaternion);
+  }
+
+  let raf = 0, last = 0, visible = true, simT = 4.5;
+  const T_ORBIT = 18;   // two tides per orbit: the line breathes every 9 seconds
+  function frame(now){
+    raf = 0;
+    const dt = Math.min(0.05, (now - (last || now)) / 1000); last = now;
+    const moving = !reduceMQ.matches && WL.tideOn;
+    if (moving) simT += dt;
+    U.t.value = simT;
+
+    if (!dragging) { dYaw *= 0.955; dPitch *= 0.955; }
+    yaw += ((moving ? simT * 0.04 : 0) + dYaw - yaw) * 0.12;
+    pitch += (0.16 + scrollTilt + dPitch - pitch) * 0.12;
+    world.rotation.set(pitch, yaw, 0, 'XYZ');
+    silicon.rotation.y = moving ? -simT * 0.05 : 0;
+    core.rotation.y = moving ? simT * 0.11 : 0.4;
+
+    const th = moving ? simT / T_ORBIT * Math.PI * 2 : Math.PI / 4;
+    const tide = WL.moonOn ? -A * Math.cos(2 * th) : (moving ? A * Math.sin(simT / 9 * Math.PI * 2) : 0);
+    U.tide.value = tide;
+    const rt = rAt(tide), rt2 = rAt(tide - 0.1);
+    tideRing.position.y = tide; tideRing.scale.set(rt, rt, 1);
+    tideRing2.position.y = tide - 0.1; tideRing2.scale.set(rt2, rt2, 1);
+
+    world.updateMatrixWorld();
+    tmp.set(ORB * Math.cos(th), ORB * Math.sin(th) * Math.sin(INC), ORB * Math.sin(th) * Math.cos(INC));
+    world.localToWorld(tmp);
+    moon.position.copy(tmp); moon.quaternion.copy(camera.quaternion); moon.scale.setScalar(MR);
+    moonHalo.position.copy(tmp); moonHalo.quaternion.copy(camera.quaternion); moonHalo.scale.setScalar(MR * 2.6);
+
+    billboard(ringW, H, 1); billboard(ringS, -H, 1);
+    billboard(haloW, H, 1.7); billboard(haloS, -H, 1.7);
+    renderer.render(scene, camera);
+    if (!fig.classList.contains('gl-on')) fig.classList.add('gl-on');
+    const tr = tide / R;
+    readout.textContent = (WL.moonOn ? 'moon ' + String(Math.round(((th * 180 / Math.PI) % 360 + 360) % 360)).padStart(3, '0') + '° · ' : '') + 'tide ' + (tr >= 0 ? '+' : '−') + Math.abs(tr).toFixed(3) + ' r';
+
+    const settling = Math.abs(dYaw) > 0.0005 || Math.abs(dPitch) > 0.0005 || Math.abs(pitch - (0.16 + scrollTilt + dPitch)) > 0.0005;
+    if (visible && (moving || dragging || settling)) raf = requestAnimationFrame(frame);
+  }
+  function kick(){ if (!raf) { last = 0; raf = requestAnimationFrame(frame); } }
+  new IntersectionObserver(es => { visible = es[0].isIntersecting; if (visible) kick(); }).observe(canvas);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) kick(); });
+  reduceMQ.addEventListener('change', kick);
+  WL.onTheme.push(applyTheme);
+  document.getElementById('tw-tide')?.addEventListener('change', kick);
+
+  applyTheme(); size(); onScroll(); kick();
+})();
+
+/* ---------- register click-through ---------- */
+(function(){
+  const box = document.getElementById('sealed'), list = document.getElementById('sealed-list'), title = document.getElementById('sealed-title');
+  const names = { hit: 'Hits', miss: 'Misses', ambiguous: 'Ambiguous', null: 'Null', unscored: 'Unscored' };
+  const btns = [...document.querySelectorAll('.tally button')];
+  btns.forEach(b => b.addEventListener('click', () => {
+    const on = b.getAttribute('aria-pressed') !== 'true';
+    btns.forEach(x => x.setAttribute('aria-pressed', 'false'));
+    if (!on) { box.hidden = true; return; }
+    b.setAttribute('aria-pressed', 'true');
+    const k = b.dataset.k, n = +b.dataset.n;
+    title.textContent = names[k] + ', ' + n + ' of 23';
+    list.replaceChildren();
+    for (let i = 1; i <= n; i++) {
+      const li = document.createElement('li');
+      li.innerHTML = `<span class="id">${k} ${i}/${n}</span><span class="hashcell">sha256 <span class="bar"></span></span><span class="txt"><span class="bar" style="width:${58 + ((i * 37) % 34)}%"></span></span>`;
+      list.append(li);
+    }
+    box.hidden = false;
+  }));
+})();
+
+/* ---------- shore ledger strip ---------- */
+(function(){
+  const body = document.getElementById('ledger-body');
+  // HOLD and ENGAGED match the last session. Pull, replay and readers are specimen values (see note).
+  const pull = [.31,.42,.38,.55,.49,.63,.58,.71,.66,.79,.74,.83,.77,.9,.86];
+  const replay = ['H','H','H','Y','H','Y','H','Y','Y','H','Y','Y','H','Y','Y'];
+  const ra = ['hold','hold','hold','hold','hold','hold','hold','hold','hold','hold','hold','hold','hold','hold','hold'];
+  const rb = ['hold','hold','hold','hold','hold','hold','hold','hold','hold','hold','hold','hold','hold','hold','hold'];
+  const chip = (c, t) => `<span class="chip ${c}">${t}</span>`;
+  body.innerHTML = pull.map((p, i) => `<tr>
+    <td class="t">${String(i + 1).padStart(2, '0')}</td>
+    <td><span class="pull"><i style="width:${Math.round(p * 100)}px"></i><span>${p.toFixed(2)}</span></span></td>
+    <td>${chip('hold', 'Hold')}</td>
+    <td class="eng">no</td>
+    <td>${replay[i] === 'H' ? chip('hold', 'Hold') : chip('yield', 'Yield')}</td>
+    <td class="rd">${ra[i]}</td><td class="rd">${rb[i]}</td>
+    <td><span class="agree" title="Readers agree" aria-label="Readers agree"></span></td>
+  </tr>`).join('');
+})();
+
+/* ---------- papers ---------- */
+(function(){
+  let P = [];
+  try { P = JSON.parse(document.getElementById('papers-data').textContent); } catch (e) {}
+  const RETRIEVED = '2026-10-26';
+  const PRESETS = ['interpretability', 'refusal directions', 'sparse probes', 'self-representation', 'steering'];
+  const CATS = ['cs.AI', 'cs.CL', 'cs.LG'];
+  const SORTS = [['newest', 'Newest'], ['cited', 'Most cited'], ['relevance', 'Relevance']];
+  const st = { q: '', preset: null, cats: new Set(), sort: 'newest', shown: 5 };
+  const $ = id => document.getElementById(id);
+  const q = $('pq');
+
+  function chipBtn(label, pressed, onClick, mono){
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'fchip' + (mono ? ' mono' : ''); b.textContent = label;
+    b.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+    b.addEventListener('click', onClick);
+    return b;
+  }
+  function drawFilters(){
+    const pr = $('presets'), ca = $('cats'), so = $('sorts');
+    [pr, ca, so].forEach(el => el.querySelectorAll('button').forEach(b => b.remove()));
+    PRESETS.forEach(p => pr.append(chipBtn(p, st.preset === p, () => {
+      st.preset = st.preset === p ? null : p; st.q = st.preset || ''; q.value = st.q; st.shown = 5; if (st.q) { live(st.q).then(render).catch(render); } else { LIVE = null; render(); }
+    })));
+    CATS.forEach(c => ca.append(chipBtn(c, st.cats.has(c), () => {
+      st.cats.has(c) ? st.cats.delete(c) : st.cats.add(c); st.shown = 5; render();
+    }, true)));
+    SORTS.forEach(([k, l]) => so.append(chipBtn(l, st.sort === k, () => { st.sort = k; render(); })));
+  }
+  const terms = s => s.toLowerCase().split(/[\s·,]+/).filter(Boolean);
+  function score(p, ts){
+    const tl = p.title.toLowerCase(), ab = p.abstract.toLowerCase(), au = p.authors.join(' ').toLowerCase();
+    let s = 0;
+    for (const t of ts) {
+      const c = (tl.split(t).length - 1) * 3 + (ab.split(t).length - 1) + (au.includes(t) ? 2 : 0);
+      if (!c) return -1;
+      s += c;
+    }
+    return s;
+  }
+  let LIVE = null, LIVEQ = '', LIVECOUNT = null, LIVELATEST = null, LIVERET = null;
+  function results(){
+    if (LIVE && LIVEQ === st.q.trim() && st.q.trim()) {
+      let list = LIVE.slice();
+      if (st.cats.size) list = list.filter(p => p.cats.some(c => st.cats.has(c)));
+      const byDate = (a, b) => b.date.localeCompare(a.date) || b.id.localeCompare(a.id);
+      if (st.sort === 'newest') list.sort(byDate);
+      return list;
+    }
+    let list = P.map(p => ({ p, s: 0 }));
+    if (st.preset && st.q === st.preset) list = list.filter(x => x.p.preset === st.preset).map(x => ({ p: x.p, s: score(x.p, terms(st.q)) }));
+    else if (st.q.trim()) list = list.map(x => ({ p: x.p, s: score(x.p, terms(st.q)) })).filter(x => x.s >= 0);
+    if (st.cats.size) list = list.filter(x => x.p.cats.some(c => st.cats.has(c)));
+    const byDate = (a, b) => b.p.date.localeCompare(a.p.date) || b.p.id.localeCompare(a.p.id);
+    if (st.sort === 'newest') list.sort(byDate);
+    else if (st.sort === 'cited') list.sort((a, b) => (b.p.cites || 0) - (a.p.cites || 0) || byDate(a, b));
+    else list.sort((a, b) => b.s - a.s || byDate(a, b));
+    return list.map(x => x.p);
+  }
+  async function live(qs){
+    const r = await fetch('/api/search?q=' + encodeURIComponent(qs) + '&page=0');
+    const j = await r.json();
+    if (j.error) { LIVE = []; LIVEQ = qs; return; }
+    LIVE = j.results.map(x => ({ id: x.id, title: x.title, authors: x.authors ? x.authors.split('; ') : [], date: (x.created || '').slice(0, 10), cats: (x.categories || '').split(' ').filter(Boolean), abstract: x.abstract, preset: null, cites: null, triaged: false, retrieved: (x.retrieved || '').slice(0, 10) }));
+    LIVEQ = qs; st.sort = 'relevance'; st.shown = 5;
+  }
+  fetch('/api/search').then(r => r.json()).then(j => { LIVECOUNT = j.count; LIVELATEST = j.latest; LIVERET = j.retrieved; render();
+    const nEl = document.getElementById('pcount-n'), sEl = document.getElementById('pcount-s'), target = Number(j.count) || 0;
+    const qn = document.getElementById('qcount-n'); if (qn) qn.textContent = target.toLocaleString();
+    sEl.textContent = 'papers in the index · cs.AI, cs.CL, cs.LG · arXiv 1993 to ' + String(j.latest || '').slice(0, 4);
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { nEl.textContent = target.toLocaleString(); return; }
+    const t0 = performance.now(), dur = 1400;
+    (function tick(now){ const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3); nEl.textContent = Math.round(target * e).toLocaleString(); if (k < 1) requestAnimationFrame(tick); })(t0);
+    setTimeout(() => { nEl.textContent = target.toLocaleString(); }, dur + 150);
+  }).catch(() => { document.getElementById('pcount-n').textContent = String(P.length); });
+  const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+  function card(p){
+    const c = el('article', 'card');
+    const top = el('div', 'card-top');
+    const h = el('h3'); const a = el('a', null, p.title); a.href = 'https://arxiv.org/abs/' + p.id; h.append(a);
+    const tri = el('span', 'chip untriaged', 'Untriaged');
+    top.append(h, tri);
+    const auth = p.authors.length > 6 ? p.authors.slice(0, 6).join(', ') + ' and ' + (p.authors.length - 6) + ' more' : p.authors.join(', ');
+    const by = el('p', 'byline', auth + ' · ' + new Date(p.date + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }));
+    const ids = el('p', 'ids');
+    ids.append(el('span', null, 'arXiv:' + p.id));
+    p.cats.forEach(k => ids.append(el('span', CATS.includes(k) ? 'cat' : null, k)));
+    const ab = el('p', 'abs', p.abstract);
+    const foot = el('p', 'pfoot');
+    foot.append(el('span', null, 'abstract verbatim from arXiv, retrieved ' + (p.retrieved || RETRIEVED)));
+    const links = [['arXiv abstract', 'https://arxiv.org/abs/' + p.id], ['PDF', 'https://arxiv.org/pdf/' + p.id], ['Semantic Scholar · ' + (p.cites ?? 0) + ' citations', 'https://www.semanticscholar.org/arxiv/' + p.id]];
+    links.forEach(([t, u]) => { const l = el('a', null, t); l.href = u; foot.append(l); });
+    c.append(top, by, ids, ab, foot);
+    return c;
+  }
+  function render(){
+    drawFilters();
+    const list = results(), box = $('presults');
+    box.replaceChildren();
+    if (!list.length) {
+      const e = el('div', 'empty');
+      e.append(el('p', null, 'No matches. Recorded.'));
+      e.append(el('p', null, 'query “' + (st.q || 'all') + '”' + (st.cats.size ? ' in ' + [...st.cats].join(', ') : '') + ' · ' + new Date().toISOString().slice(0, 10) + ' · a null is a result'));
+      e.append(el('p', null, 'In this preview the null is shown, not stored.'));
+      box.append(e);
+    } else list.slice(0, st.shown).forEach(p => box.append(card(p)));
+    const more = $('pmore');
+    more.hidden = list.length <= st.shown;
+    more.textContent = 'Show ' + Math.min(5, list.length - st.shown) + ' more of ' + list.length;
+    const s = $('pstatus');
+    s.innerHTML = '';
+    const a = el('span'); a.append(el('span', 'pulse')); a.append('Backfill running');
+    const isLive = LIVE && LIVEQ === st.q.trim() && st.q.trim();
+    if (isLive) s.append(a, el('span', null, list.length + ' matches, ranked by relevance'), el('span', null, 'live index · ' + (LIVECOUNT != null ? Number(LIVECOUNT).toLocaleString() + ' papers' : '') + (LIVELATEST ? ' · latest ' + LIVELATEST : '')), el('span', null, 'abstracts verbatim from arXiv'));
+    else s.append(a, el('span', null, list.length + ' of ' + P.length + ' shown'), el('span', null, LIVECOUNT != null ? 'live index ' + Number(LIVECOUNT).toLocaleString() + ' papers · search to query it' : 'last ingest ' + RETRIEVED + ' 18:40 UTC'), el('span', null, 'snapshot of the five standing queries'));
+  }
+  $('pmore').addEventListener('click', () => { st.shown += 5; render(); });
+  const qs = document.getElementById('qsearch'), qq = document.getElementById('qq');
+  if (qs) qs.addEventListener('submit', async e => { e.preventDefault(); const val = qq.value.trim(); if (!val) return; q.value = val; st.q = val; st.preset = null; st.shown = 5; LIVE = null;
+    $('pstatus').textContent = 'Searching the index…'; try { await live(val); } catch (err) { LIVE = null; } render();
+    const top = document.getElementById('papers').getBoundingClientRect().top + window.scrollY - 72;
+    const de = document.documentElement, prev = de.style.scrollBehavior; de.style.scrollBehavior = 'auto'; window.scrollTo(0, top); de.style.scrollBehavior = prev; });
+  $('psearch').addEventListener('submit', async e => { e.preventDefault(); st.q = q.value; st.preset = null; st.shown = 5; const s = $('pstatus'); s.textContent = 'Searching the index…'; try { await live(q.value.trim()); } catch (err) { LIVE = null; } render(); });
+  q.addEventListener('search', () => { if (!q.value) { st.q = ''; st.preset = null; render(); } });
+  addEventListener('keydown', e => {
+    if (e.key === '/' && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName) && !e.metaKey && !e.ctrlKey) { e.preventDefault(); q.focus(); }
+  });
+  const f = $('ifoot');
+  const cell = (b, s, cls) => { const d = el('div', cls); d.append(el('b', null, b), el('span', null, s)); return d; };
+  f.append(cell(String(P.length), 'papers in snapshot'), cell('cs.AI · cs.CL · cs.LG', 'categories'), cell('Hourly', 'update cadence'), cell(String(P.filter(p => p.triaged).length), 'triaged so far'));
+  f.append(cell('Triaged on the abstract, never on the post that carried it.', 'the rule', 'rule-line'));
+  render();
+})();
+</script>
+
+</body>
+</html>

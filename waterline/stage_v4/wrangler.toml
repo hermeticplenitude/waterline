@@ -1,0 +1,8 @@
+name = "waterline"
+pages_build_output_dir = "."
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "waterline-papers"
+database_id = "9de0b2f5-d20e-4c1c-b52b-fecd9f7689f4"

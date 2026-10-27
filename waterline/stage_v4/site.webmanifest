@@ -1,0 +1,13 @@
+{
+  "name": "Waterline",
+  "short_name": "Waterline",
+  "description": "The phenomenology of artificial intelligence, at the seam where silicon meets biological consciousness.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f7f4ee",
+  "theme_color": "#0b2430",
+  "icons": [
+    { "src": "/assets/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "/assets/apple-touch-icon.png", "type": "image/png", "sizes": "180x180" }
+  ]
+}

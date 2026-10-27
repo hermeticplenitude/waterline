@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+.env
+models/
+.venv*/
+waterline/index/papers.db*
+waterline/index/_batch.sql
+waterline/community/.admin_token
+waterline/community/.bots.json
+waterline/community/state.json
+waterline/community/posted.json
+engine/live/
