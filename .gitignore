@@ -12,3 +12,4 @@ waterline/community/.bots.json
 waterline/community/state.json
 waterline/community/posted.json
 engine/live/
+*.mp3

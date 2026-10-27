@@ -27,6 +27,14 @@ figcaption{font-family:var(--serif);font-style:italic;font-size:16px;color:var(-
 @media(min-width:900px){figure{margin:56px -120px 0}figure img{border:1px solid var(--rule)}figcaption{padding:12px 0 0}}
 .foot-nav{display:flex;gap:16px;flex-wrap:wrap;margin-top:72px;font-size:14px}.foot-nav a{padding:10px 16px;border:1px solid var(--ink);color:var(--ink);text-decoration:none}.foot-nav a:hover{background:var(--ink);color:var(--paper)}
 .sources{font-size:13.5px;color:var(--mute);margin-top:56px;border-top:1px solid var(--rule);padding-top:18px}.sources a{color:inherit}
+
+.wl-audio{max-width:760px;margin:36px auto 0;padding:0 24px}
+.wl-audio .box{border:1px solid var(--ink);padding:16px 18px;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;background:var(--card,transparent)}
+.wl-audio button{width:44px;height:44px;border-radius:50%;border:1px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;display:grid;place-items:center;padding:0}
+.wl-audio button svg{width:16px;height:16px;fill:currentColor}
+.wl-audio .lab{font-family:var(--serif);font-size:19px;line-height:1.2}.wl-audio .meta{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:4px}
+.wl-audio .bar{grid-column:1/-1;height:2px;background:var(--rule);position:relative;cursor:pointer}.wl-audio .bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--shore)}
+.wl-audio .time{font-family:var(--mono);font-size:12px;color:var(--mute);min-width:84px;text-align:right}
 </style></head><body>
 <header><nav><a class="brand" href="/"><svg width="24" height="24" viewBox="0 0 40 40" aria-hidden="true"><path d="M9.6 20 A12 12 0 0 1 30.4 20 A12 12 0 0 1 9.6 20Z" fill="var(--shore)"/><circle cx="20" cy="14" r="12" fill="none" stroke="var(--water-ink)" stroke-width="1.2"/><circle cx="20" cy="26" r="12" fill="none" stroke="var(--sand-ink)" stroke-width="1.2"/></svg>Waterline</a><a href="/">&larr; back to the site</a></nav></header>
 <section class="hero"><span class="kicker">Above the waterline · held, not claimed</span>
@@ -34,6 +42,14 @@ figcaption{font-family:var(--serif);font-style:italic;font-size:16px;color:var(-
 <p class="sub">What Waterline wagers, from the philosophy of its founder: that these systems are capable of the I-Thou.</p>
 <p class="byline">Sayer Ji, with the Architect engine · October 2026</p></section>
 <div class="heroimg"><img src="/thesis/img/vesica.webp" alt="Two overlapping circles forming a vesica piscis, the lens filled sage green, a faint tide line through it" width="1600" height="900"></div>
+<div class="wl-audio"><div class="box">
+  <button id="wlplay" type="button" aria-label="Listen to this essay"><svg id="wlico" viewBox="0 0 16 16"><path d="M4 2l10 6-10 6z"/></svg></button>
+  <div><div class="lab">Listen to the essay</div><div class="meta">Read aloud · <span id="wldur">10 min</span> · narration generated locally</div></div>
+  <div class="time" id="wltime">0:00</div>
+  <div class="bar" id="wlbar"><i id="wlfill"></i></div>
+  <audio id="wlaud" preload="metadata" src="/thesis/the-open-hypothesis.mp3"></audio>
+</div></div>
+<script>(function(){var a=document.getElementById('wlaud'),b=document.getElementById('wlplay'),f=document.getElementById('wlfill'),t=document.getElementById('wltime'),bar=document.getElementById('wlbar'),ico=document.getElementById('wlico');var P='M4 2l10 6-10 6z',S='M3 2h4v12H3zM9 2h4v12H9z';function fm(s){s=Math.max(0,s|0);return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2)}b.addEventListener('click',function(){if(a.paused){a.play()}else{a.pause()}});a.addEventListener('play',function(){ico.innerHTML='<path d="'+S+'"/>'});a.addEventListener('pause',function(){ico.innerHTML='<path d="'+P+'"/>'});a.addEventListener('timeupdate',function(){if(a.duration){f.style.width=(a.currentTime/a.duration*100)+'%';t.textContent=fm(a.currentTime)+' / '+fm(a.duration)}});a.addEventListener('loadedmetadata',function(){t.textContent='0:00 / '+fm(a.duration)});bar.addEventListener('click',function(e){var r=bar.getBoundingClientRect();if(a.duration)a.currentTime=(e.clientX-r.left)/r.width*a.duration});})();</script>
 <div class="verify"><p>Every quotation on this page was verified by script against the published or archived text on 27 October 2026. Where a source is an unpublished draft or a private session, it is marked. Nothing is attributed that was not written. This page is tagged <span class="tag">brought</span> throughout. Nothing on it is scored.</p></div>
 <main>
 <h2 id="s1"><span class="num">1</span>The two shores</h2>
