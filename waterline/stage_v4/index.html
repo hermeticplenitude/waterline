@@ -368,6 +368,14 @@ footer .creed{font-family:var(--serif);font-size:22px;color:var(--ink);font-styl
 .qsearch button{border:0;border-left:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:0 20px;font:inherit;font-size:14px;cursor:pointer;min-width:44px}
 .qsearch button:hover{background:var(--water-ink)}
 @media(max-width:640px){.qcount span{display:none}.qcount{padding:0 12px}.qcount b{font-size:20px}.qsearch input{font-size:15px;padding:0 10px}}
+
+.menubtn{display:none;align-items:center;gap:8px;background:none;border:1px solid var(--rule);color:var(--ink);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;cursor:pointer}
+.menubtn svg{width:16px;height:16px;stroke:currentColor;stroke-width:1.6;fill:none}
+@media (max-width:980px){.menubtn{display:inline-flex}}
+.menu{display:none;position:absolute;right:0;top:56px;z-index:50;min-width:250px;background:var(--paper);border:1px solid var(--ink);padding:8px 0;box-shadow:0 12px 40px rgba(28,26,23,.12)}
+.menu.open{display:block}.menu a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:15px;border:0}.menu a:hover{background:var(--ink);color:var(--paper)}
+.menu a.cur{font-weight:500;border-left:2px solid var(--shore)}.menu .sep{height:1px;background:var(--rule);margin:8px 0}.menu .lab{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);padding:8px 18px 4px}
+header .wrap{position:relative}
 </style>
 </head>
 <body>
@@ -392,8 +400,10 @@ footer .creed{font-family:var(--serif);font-size:22px;color:var(--ink);font-styl
   </ul>
   <div class="navright">
     <a class="of" href="https://www.ancientfutures.earth">a circle of Ancient Futures &#8599;</a>
+    <button class="menubtn" id="menubtn" type="button" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>Menu</button>
     <button class="themebtn" id="themebtn" type="button" aria-label="Switch between day and night">Night</button>
   </div>
+<div class="menu" id="menu" role="menu"><div class="lab">Pages</div><a href="/thesis/">The Thesis</a><a href="/phenomenology/">A Phenomenology of AI</a><a href="/reviews/">Reviews</a><a href="/whitepaper/">The white paper</a><div class="sep"></div><div class="lab">This page</div><a href="#questions">Two questions</a><a href="#papers">Papers: search 481,522</a><a href="#method">Method</a><a href="#register">The register</a><a href="#shore">The shore</a><a href="#above">Above the waterline</a><a href="#join">Join the circle</a><div class="sep"></div><a href="https://vesica.chat/#/room/%23waterline:vesica.chat" target="_blank" rel="noopener">Chat on vesica.chat &#8599;</a><a href="https://github.com/hermeticplenitude/waterline">Code and register &#8599;</a></div>
 </nav></div></header>
 
 <main id="top">
@@ -1311,5 +1321,6 @@ const reduceMQ = matchMedia('(prefers-reduced-motion: reduce)');
 })();
 </script>
 
+<script>(function(){var b=document.getElementById('menubtn'),m=document.getElementById('menu');if(!b||!m)return;b.addEventListener('click',function(e){e.stopPropagation();var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)});document.addEventListener('click',function(e){if(!m.contains(e.target)){m.classList.remove('open');b.setAttribute('aria-expanded','false')}});document.addEventListener('keydown',function(e){if(e.key==='Escape'){m.classList.remove('open');b.setAttribute('aria-expanded','false')}});m.addEventListener('click',function(e){if(e.target.tagName==='A'){m.classList.remove('open');b.setAttribute('aria-expanded','false')}})})();</script>
 </body>
 </html>
