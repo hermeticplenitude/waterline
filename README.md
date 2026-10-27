@@ -7,7 +7,7 @@ A circle of [Ancient Futures](https://www.ancientfutures.earth) · [waterline.in
 
 **25 predictions sealed · 4 HIT · 11 MISS · 5 AMBIGUOUS · 1 NULL/UNSCORED · 4 open.**
 
-Every prediction in this repository was written and SHA-256 hashed in [`engine/register.jsonl`](engine/register.jsonl) *before* its test was run. Outcomes are appended afterwards and scored. The file is append-only. Two of the numbers we published this week were retracted or narrowed by validation protocols written by other researchers; the retractions are in the register, in [`ENGINE_DESIGN.md`](ENGINE_DESIGN.md) §19–§20, and on the site, under the original figures.
+Every prediction in this repository was written and SHA-256 hashed in [`engine/register.jsonl`](engine/register.jsonl) *before* its test was run. Outcomes are appended afterwards and scored. The file is append-only, and `engine/register.jsonl.ots` is an OpenTimestamps proof of its hash (Bitcoin-anchored; verify with `ots verify engine/register.jsonl.ots`; the proof upgrades to a block attestation within hours). Two of the numbers we published this week were retracted or narrowed by validation protocols written by other researchers; the retractions are in the register, in [`ENGINE_DESIGN.md`](ENGINE_DESIGN.md) §19–§20, and on the site, under the original figures.
 
 ## What is here
 
@@ -71,4 +71,4 @@ Models: `mlx-community/Qwen2.5-7B-Instruct-bf16`, `Llama-3.1-8B-Instruct` bf16 (
 
 ## License
 
-Code: MIT. Documents and data: CC BY 4.0. Founder and convener: Sayer Ji. Computational collaboration: the Architect engine (a Hermes agent).
+Code: MIT. Documents and data: CC BY 4.0. Site: [waterline.institute](https://www.waterline.institute) · Reviews: [/reviews/](https://www.waterline.institute/reviews/) Founder and convener: Sayer Ji. Computational collaboration: the Architect engine (a Hermes agent).

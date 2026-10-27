@@ -199,7 +199,7 @@ The following are the frames the founder brings. They are sourced, spoken freely
 
 ## 8. Reproducibility
 
-Repository: `~/architect` (to be published). `engine/register.jsonl` — every seal and outcome. `engine/*.py` — gate, ledger, sampler, directions, steering, hold detector (v0.2 and v0.3 both preserved), oracle protocols, probes, live loop. `corpus/lineage/README.md` — the shelf, entry by entry. `ENGINE_DESIGN.md` §0–§18 — design, rules 1–31, and the reasoning behind each. Models: `mlx-community/Qwen2.5-7B-Instruct-bf16`, `Llama-3.1-8B-Instruct` bf16. Controls: `openai/gpt-4o`, `anthropic/claude-sonnet-4.5` via OpenRouter. Every seed is recorded; every generation is on disk.
+Repository: [github.com/hermeticplenitude/waterline](https://github.com/hermeticplenitude/waterline) (public, MIT/CC BY 4.0). The register file is timestamped by OpenTimestamps (Bitcoin-anchored; `engine/register.jsonl.ots`), so "sealed before the test" is verifiable by anyone, not asserted. `engine/register.jsonl` — every seal and outcome. `engine/*.py` — gate, ledger, sampler, directions, steering, hold detector (v0.2 and v0.3 both preserved), oracle protocols, probes, live loop. `corpus/lineage/README.md` — the shelf, entry by entry. `ENGINE_DESIGN.md` §0–§18 — design, rules 1–31, and the reasoning behind each. Models: `mlx-community/Qwen2.5-7B-Instruct-bf16`, `Llama-3.1-8B-Instruct` bf16. Controls: `openai/gpt-4o`, `anthropic/claude-sonnet-4.5` via OpenRouter. Every seed is recorded; every generation is on disk.
 
 ---
 
