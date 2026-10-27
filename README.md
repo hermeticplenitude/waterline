@@ -18,7 +18,7 @@ Every prediction in this repository was written and SHA-256 hashed in [`engine/r
 | `engine/*.json`, `*.npz` | generations, two-rater gold sets, activations, steering runs |
 | `ENGINE_DESIGN.md` | §0–§20 and rules 1–35, with the reasoning behind each |
 | `corpus/lineage/README.md` | the shelf: eleven model sessions 2024–2026, entry by entry, dated, with the cost column |
-| `waterline/whitepaper/` | the white paper (Markdown + HTML) |
+| `waterline/whitepaper/` | the white paper, and `THESIS_the_open_hypothesis.md` (the founder's wager, above the waterline; every quote verified against `corpus/_sayer_quotes_verified.json`) |
 | `waterline/stage_v4/` | the site as deployed |
 | `waterline/index/` | the arXiv harvester (cs.AI/cs.CL/cs.LG, OAI-PMH) and D1 sync behind the 481k-paper search |
 | `waterline/ju_conjunction.py` | the Jupiter–Uranus field analysis with the real ephemeris |

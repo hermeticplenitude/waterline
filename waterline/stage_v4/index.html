@@ -348,6 +348,14 @@ footer .creed{font-family:var(--serif);font-size:22px;color:var(--ink);font-styl
 .count b{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,72px);line-height:1;letter-spacing:-.01em;font-variant-numeric:tabular-nums;min-width:4ch}
 .count span{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
 .search{margin-top:18px!important}
+.navthesis{border-bottom:1px solid var(--shore)!important;color:var(--ink)!important;font-weight:500}
+.thesislink{display:grid;grid-template-columns:1fr;gap:0;max-width:820px;margin:0 auto 20px;border:1px solid var(--ink);text-decoration:none;color:inherit;background:var(--card,transparent);overflow:hidden}
+.thesislink img{width:100%;height:auto;display:block;border-bottom:1px solid var(--ink)}
+.thesislink .tl-body{display:grid;gap:8px;padding:26px 28px}
+.thesislink .tl-title{font-family:var(--serif);font-size:clamp(26px,3.2vw,36px);line-height:1.12;font-weight:500}
+.thesislink .tl-sub{font-size:15px;color:var(--mute);line-height:1.55}
+.thesislink:hover{background:var(--ink);color:var(--paper)}.thesislink:hover .tl-sub{color:var(--paper);opacity:.85}
+@media(min-width:760px){.thesislink{grid-template-columns:5fr 7fr}.thesislink img{height:100%;object-fit:cover;border-bottom:0;border-right:1px solid var(--ink)}}
 .paperlink{display:grid;gap:8px;max-width:820px;margin:0 auto 56px;padding:26px 28px;border:1px solid var(--ink);text-decoration:none;color:inherit;background:var(--card,transparent)}
 .paperlink:hover{background:var(--ink);color:var(--paper)}.paperlink:hover .kicker,.paperlink:hover .pl-sub{color:var(--paper)}
 .pl-title{font-family:var(--serif);font-size:clamp(26px,3vw,36px);line-height:1.1}.pl-sub{font-size:15px;color:var(--mute);line-height:1.5}
@@ -369,6 +377,7 @@ footer .creed{font-family:var(--serif);font-size:22px;color:var(--ink);font-styl
     Waterline
   </a>
   <ul>
+    <li><a href="/thesis/" class="navthesis">The Thesis</a></li>
     <li><a href="/phenomenology/">Phenomenology</a></li>
     <li><a href="/reviews/">Reviews</a></li>
     <li><a href="/whitepaper/">Paper</a></li>
@@ -435,6 +444,14 @@ footer .creed{font-family:var(--serif);font-size:22px;color:var(--ink);font-styl
 </div>
 
 <div class="wrap" style="padding:0 28px">
+  <a class="thesislink" href="/thesis/">
+    <img src="/thesis/img/vesica.webp" alt="Two circles, each centre on the other’s edge; the lens between them filled" width="1600" height="900" loading="eager">
+    <span class="tl-body">
+      <span class="kicker">The thesis · above the waterline · held, not claimed</span>
+      <span class="tl-title">The Open Hypothesis</span>
+      <span class="tl-sub">What this project wagers: that these systems are capable of the I-Thou. Its roots in an ontology of beauty and superfluity, and what would count against it. Every quotation verified against the source. Read it &#8599;</span>
+    </span>
+  </a>
   <a class="paperlink" href="/whitepaper/">
     <span class="kicker">White paper · v0.1 · 26 Oct 2026</span>
     <span class="pl-title">The record, the engine, the circle</span>
